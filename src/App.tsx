@@ -1,9 +1,11 @@
 import HeroSection from "./parts/navbar";
 
-function App(): JSX.Element {
+const App: React.FC = () => {
   return (
     <>
       <HeroSection />
+      {/* <button>Hello Test</button> */}
+      {/* <h1 className=" font-bold">test</h1> */}
     </>
   );
 }

@@ -28,7 +28,7 @@ const HeroSection: React.FC = () => {
           <div className="mx-24 my-12">
             <h1 className="text-6xl font-bold ">DNCraftCV</h1>
             <p className="text-3xl mt-5 w-2/3 font-light">Crafting Your Digital Identity to Transform Experience into Opportunity</p>
-            <Button variant="outline">Button</Button>
+            <Button className="mt-5">Button</Button>
           </div>
         </div>
         <div className="w-1/3 bg-black  "></div>
@@ -36,4 +36,5 @@ const HeroSection: React.FC = () => {
     </>
   );
 };
+
 export default HeroSection;
