@@ -4,15 +4,16 @@ interface CardProps {
     title: string;
     img: string;
     content: string;
+    contentClassName?: string;
     customClass?: string;
 }
 
-const CustomCard: React.FC<CardProps> = ({ title, img, content, customClass = "" }) => {
+const CustomCard: React.FC<CardProps> = ({ title, contentClassName, img, content, customClass = "" }) => {
     return (
-        <div className={`${customClass} mt-5 bg-white h-72 lg:mt-0 shadow-md rounded-lg mx-2 p-8  `}>
+        <div className={`${customClass}  mt-4  w-1/3 h-80 lg:mt-0 rounded-lg mx-2 p-8  `}>
           <img className='w-1/5 mx-auto mb-5 mt-3' src={img} alt={title} />
           <h2 className="mx-auto text-center mt-2 text-xl font-bold mb-2">{title}</h2>
-          <p className="text-base text-center">{content}</p>
+          <p className={`text-base text-center ${contentClassName}`} >{content}</p>
         </div>
      );
 }
