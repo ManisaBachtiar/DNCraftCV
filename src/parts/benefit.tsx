@@ -9,16 +9,16 @@ const BenefitSection: React.FC = () => {
   return (
     <>
       <div className="max-w-7xl mx-auto bg-white pb-7">
-        <h1 className="pt-16 mx-24 font-bold text-3xl">
+        <h1 className="pt-10 md:pt-16 mx-9 md:mx-24  font-bold text-3xl">
           The Benefits We Offer
         </h1>
-        <p className="font-medium mx-24 w-2/3 text-lg mt-5 ">
+        <p className="font-medium mx-9 md:mx-24 md:w-2/3 text-lg mt-5 ">
           We provide you with a CV and cover letter maker that offers several
           benefits, making the creation process easier and enhancing the
           elegance of your CV.
         </p>
 
-        <div className="max-w-7xl mt-12  mx-auto flex justify-center w-full ">
+        <div className="max-w-7xl mt-12 md:flex-row flex-col px-9  mx-auto flex justify-center w-full ">
           <CardMedium
             img={free}
             title="Free to Use"
@@ -30,7 +30,7 @@ const BenefitSection: React.FC = () => {
             description="We provide an AI assistant to aid you, enabling you to effortlessly employ impactful language."
           />
         </div>
-        <div className="max-w-7xl mt-5  mx-auto flex justify-center w-full ">
+        <div className="max-w-7xl md:mt-5 md:flex-row flex-col px-9  mx-auto flex justify-center w-full ">
           <CardMedium
             img={efficient}
             title="Efficiently Empowering You"

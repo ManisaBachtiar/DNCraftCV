@@ -17,7 +17,7 @@ const CustomCard: React.FC<CardProps> = ({
 }) => {
   return (
     <div
-      className={`${customClass}  mt-4  w-1/3 lg:mt-0 rounded-lg mx-4 p-8  `}
+      className={`${customClass}  mt-4 w-3/4  md:w-1/3 lg:mt-0 rounded-lg mx-4 p-8  `}
     >
       <img className="w-1/5 mx-auto mb-5 mt-3" src={img} alt={title} />
       <h2 className="mx-auto text-center mt-2 text-xl font-bold mb-2">
