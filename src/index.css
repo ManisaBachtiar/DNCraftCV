@@ -71,10 +71,8 @@
     @apply border-border;
   }
   body {
-    
     @apply bg-background text-foreground;
     font-family: "Inter", sans-serif;
-    background-color:#A6A6A6;
-    height: 7000px;
+    background-color: #a6a6a6;
   }
 }
