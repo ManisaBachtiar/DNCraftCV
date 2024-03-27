@@ -8,11 +8,11 @@ import free from "../assets/free.svg";
 const BenefitSection: React.FC = () => {
   return (
     <>
-      <div className="max-w-7xl mx-auto bg-white mt-9">
-        <h1 className="pt-16 mx-12 font-bold text-3xl">
+      <div className="max-w-7xl mx-auto bg-white pb-7">
+        <h1 className="pt-16 mx-24 font-bold text-3xl">
           The Benefits We Offer
         </h1>
-        <p className="font-medium mx-12 w-2/3 text-lg mt-5 ">
+        <p className="font-medium mx-24 w-2/3 text-lg mt-5 ">
           We provide you with a CV and cover letter maker that offers several
           benefits, making the creation process easier and enhancing the
           elegance of your CV.
