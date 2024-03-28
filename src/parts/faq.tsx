@@ -7,7 +7,7 @@ import {
 const FaqSection: React.FC = () => {
   return (
     <>
-      <div className="max-w-5xl mx-auto bg-white">
+      <div className="max-w-5xl mx-9 md:mx-auto bg-white">
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
             <AccordionTrigger>What is a CV?</AccordionTrigger>

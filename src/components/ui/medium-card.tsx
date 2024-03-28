@@ -9,11 +9,11 @@ const CardMedium: React.FC<{
       <div className="pb-5 md:pb-3 mt-5 ">
         <div className="flex justify-between">
           {" "}
-          <div className="font-bold text-xl ">{title}</div>
+          <div className="font-bold text-xl mt-2 md:mt-0 ">{title}</div>
           <img src={img} className="w-[8%] md:w-[6%]" alt="" />
         </div>
 
-        <p className="text-gray-700 text-lg font-medium mt-5">{description}</p>
+        <p className="text-gray-700 text-lg font-medium mt-5 mb-5 md:mb-0">{description}</p>
       </div>
     </div>
   );

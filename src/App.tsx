@@ -7,26 +7,30 @@ const App: React.FC = () => {
   return (
     <>
       <HeroSection />
+      <div className="bg-[#ECEBEB]">
       <div className="bg-[#ECEBEB] max-w-7xl mx-auto">
         <ServicesSection />
       </div>
-      <BenefitSection />
-      <div className=" bg-[#ECEBEB]  max-w-7xl mx-auto">
-        <h1 className="font-bold text-3xl text-center py-12">How It Works</h1>
-        <StepSection />
       </div>
+      <BenefitSection />
+      <div className="bg-[#ECEBEB]">
+      <div className=" bg-[#ECEBEB]  max-w-7xl mx-auto">
+        <h1 className="font-bold text-3xl text-center pt-20">How It Works</h1>
+        <StepSection />
+      </div></div>
       <div className="bg-white  max-w-7xl mx-auto pb-44">
-        <h1 className="font-bold text-3xl text-center pt-12">
+        <h1 className="font-bold text-3xl mx-9 md:mx-0  md:text-center pt-16 md:pt-20">
           Frequently Asked Question
         </h1>
-        <p className="text-center mx-auto pt-3 w-1/2 pb-16">
+        <p className="md:text-center mx-9 md:mx-auto pt-3 md:w-1/2 pb-16">
           We offer a compilation of frequently asked questions along with their
           corresponding answers to help clarify information on this website.
         </p>
         <FaqSection />
       </div>
-      <footer className="bg-[#ECEBEB] h-24 flex justify-center items-center max-w-7xl mx-auto text-black text-center">
-        <p>Copyright © 2024 DNCraftCV. All rights reserved.</p>
+      <footer className="bg-[#ECEBEB]">
+        <div className="bg-[#ECEBEB] h-24 flex justify-center md:text-sm text-xs items-center max-w-7xl mx-auto text-black text-center">
+        <p>Copyright © 2024 DNCraftCV. All rights reserved.</p></div>
       </footer>
     </>
   );

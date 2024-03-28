@@ -73,6 +73,5 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Inter", sans-serif;
-    background-color: #a6a6a6;
   }
 }

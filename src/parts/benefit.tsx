@@ -8,17 +8,18 @@ import free from "../assets/free.svg";
 const BenefitSection: React.FC = () => {
   return (
     <>
-      <div className="max-w-7xl mx-auto bg-white pb-7">
-        <h1 className="pt-10 md:pt-16 mx-9 md:mx-24  font-bold text-3xl">
+  <div className="bg-white">
+      <div className="max-w-7xl mx-auto bg-white pb-20">
+        <h1 className="pt-12 md:pt-24 mx-9 md:mx-32  font-bold text-3xl">
           The Benefits We Offer
         </h1>
-        <p className="font-medium mx-9 md:mx-24 md:w-2/3 text-lg mt-5 ">
+        <p className="font-medium mx-9 md:mx-32 md:w-2/3 text-lg mt-5 ">
           We provide you with a CV and cover letter maker that offers several
           benefits, making the creation process easier and enhancing the
           elegance of your CV.
         </p>
 
-        <div className="max-w-7xl mt-12 md:flex-row flex-col px-9  mx-auto flex justify-center w-full ">
+        <div className="max-w-7xl mt-6 md:mt-12 md:flex-row flex-col px-9  mx-auto flex justify-center w-full ">
           <CardMedium
             img={free}
             title="Free to Use"
@@ -42,7 +43,7 @@ const BenefitSection: React.FC = () => {
             description="We also offer pre-selected templates for ATS-friendly CVs and cover letters."
           />
         </div>
-      </div>
+      </div></div>
     </>
   );
 };

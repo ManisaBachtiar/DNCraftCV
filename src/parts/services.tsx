@@ -7,6 +7,7 @@ import cl_image from "../assets/CL.svg";
 const ServicesSection: React.FC = () => {
   return (
     <>
+  
       <div
         className={`max-w-5xl flex flex-col sm:flex-row  mx-auto  lg:px-0 justify-center items-center  py-12 `}
       >
