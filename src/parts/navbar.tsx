@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import img from "../assets/img4.png";
 import bar from "../assets/bars-3.svg";
+import { Link } from 'react-router-dom';
 const HeroSection: React.FC = () => {
   return (
     <>
@@ -42,9 +43,11 @@ const HeroSection: React.FC = () => {
               Opportunity
             </p>
             <div className=" flex flex-col sm:flex-row">
+            <Link to={"/form"}>
             <Button className="mt-12 md:mt-12 w-48 px-5 xl:px-9 text-lg py-[1.7rem] xl:py-8 rounded-xl font-semibold ">
               Curriculum Vitae
             </Button>
+            </Link>
             <Button className="mt-3 sm:mt-12 w-48 sm:ml-5 px-5 xl:px-9 py-6 xl:py-8 rounded-xl font-bold border-black border-2 bg-light text-lg text-black">
               Cover Letter
             </Button>

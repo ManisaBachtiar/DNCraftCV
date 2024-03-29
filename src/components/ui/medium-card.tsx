@@ -6,8 +6,6 @@ interface MediumCardProps {
   img: string;
 }
 
-// --afk fapp um okeeee
-
 const CardMedium: React.FC<MediumCardProps> = ({ title, description, img }) => {
   return (
     <div className=" rounded  overflow-hidden border-t border-[#A4A4A4] lg:mx-24 md:mx-5 bg-white  w-full">
