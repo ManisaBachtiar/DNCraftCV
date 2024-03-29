@@ -1,12 +1,14 @@
 import React from "react";
 import template from "./assets/templateImg.jpg";
+import { Button } from "./components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox"
 
 const Form: React.FC = () => {
   
   const AddImage: React.FC<{ src: any; alt: string; }> = ({ src, alt }) => {
     return (
         <img
-            className="w-1/3 h-auto mx-5"
+            className="w-1/3 h-auto border-2 mx-5 hover:border-black  transition duration-300"
             src={ src }
             alt={ alt }
         />
@@ -30,8 +32,11 @@ const Form: React.FC = () => {
 
         <div className="flex mt-12 mx-9 justify-center">
           <AddImage src={ template } alt="Placeholder1 "/>
+          <Checkbox />
           <AddImage src={ template } alt="Placeholder1 "/>
+          <Checkbox />
           <AddImage src={ template } alt="Placeholder1 "/>
+          <Checkbox />
         </div>
 
         <div className="flex mt-12 mx-9 justify-center">
@@ -40,6 +45,9 @@ const Form: React.FC = () => {
           <AddImage src={ template } alt="Placeholder1 "/>
         </div>
         </div>
+      </div>
+      <div className="bg-white h-16  w-[100%] fixed bottom-0">
+       <Button className="mx-9 ml-[90%] mt-3">Choose</Button>
       </div>
     </>
   );
