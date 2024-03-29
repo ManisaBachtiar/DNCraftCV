@@ -6,6 +6,7 @@ interface CardProps {
   content: string;
   contentClassName?: string;
   customClass?: string;
+  classCustom?:string;
 }
 
 const CustomCard: React.FC<CardProps> = ({
@@ -14,12 +15,13 @@ const CustomCard: React.FC<CardProps> = ({
   img,
   content,
   customClass = "",
+  classCustom="",
 }) => {
   return (
     <div
-      className={`${customClass}  mt-4 w-3/4  md:w-1/3 lg:mt-0 rounded-lg mx-4 p-8  `}
+      className={`${customClass}  mt-4 w-3/4  sm:w-1/2 lg:mt-0 rounded-lg  mx-4 md:mx-2  p-8 md:p-5  `}
     >
-      <img className="w-1/5 mx-auto mb-5 md:mt-3" src={img} alt={title} />
+      <img className={`${classCustom} w-1/6  mx-auto mb-5 md:mt-3`} src={img} alt={title}  />
       <h2 className="mx-auto text-center mt-2 text-xl font-bold mb-2">
         {title}
       </h2>

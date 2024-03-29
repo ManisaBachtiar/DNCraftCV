@@ -32,7 +32,8 @@ const App: React.FC = () => {
         <div className="bg-[#ECEBEB] h-24 flex justify-center md:text-sm text-xs items-center max-w-7xl mx-auto text-black text-center">
         <p>Copyright © 2024 DNCraftCV. All rights reserved.</p></div>
       </footer>
-    </>
+    </> 
+    
   );
 };
 
