@@ -7,7 +7,7 @@ const HeroSection: React.FC = () => {
     <>
     <div className="bg-[#F9F9F9]">
       <div className="flex max-w-7xl mx-auto relative">
-        <div className=" lg:w-2/3 pt-3 bg-white  sm:bg-red-200 md:bg-yellow-400 lg:bg-blue-400 pb-12  ">
+        <div className=" lg:w-2/3 pt-3 bg-white  pb-12  ">
           <nav className="mx-9 md:p-4 flex justify-left items-center ">
           <span className="ml-6 hidden md:block text-lg xl:text-xl font-bold mt-3 text-black">
               DNCraftCV
@@ -53,7 +53,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         <div className="w-1/3 bg-black hidden lg:block  "></div>
-        <img className="absolute hidden lg:block w-[49%] ml-[42rem] mt-32" src={img} alt="" />
+        <img className="absolute hidden lg:block w-[49%] lg:ml-[36rem] xl:ml-[42rem] mt-32" src={img} alt="" />
       </div>
       </div>
     </>
