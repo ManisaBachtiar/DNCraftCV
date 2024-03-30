@@ -3,6 +3,7 @@ import template from "./assets/templateImg.jpg";
 import { Button } from "./components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import arrow from "./assets/arrow-left.svg";
+import { Link } from "react-router-dom";
 const Form: React.FC = () => {
   const AddImage: React.FC<{ src: any; alt: string }> = ({ src, alt }) => {
     return (
@@ -69,7 +70,9 @@ const Form: React.FC = () => {
         </div>
       </div>
       <div className="bg-white h-16  w-[100%] fixed bottom-0">
+      <Link to={"/headingForm"}>
         <Button className="mx-9 ml-72 sm:ml-[90%] mt-3">Choose</Button>
+        </Link>
       </div>
     </>
   );

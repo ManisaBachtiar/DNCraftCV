@@ -43,7 +43,7 @@ const HeroSection: React.FC = () => {
               Opportunity
             </p>
             <div className=" flex flex-col sm:flex-row">
-            <Link to={"/form"}>
+            <Link to={"/template"}>
             <Button className="mt-12 md:mt-12 w-48 px-5 xl:px-9 text-lg py-[1.7rem] xl:py-8 rounded-xl font-semibold ">
               Curriculum Vitae
             </Button>

@@ -1,14 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './home';
-import Form from './form';
+import Template from './template';
+import HeadingForm from './headingForm';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/form" element={<Form />} />
+        <Route path="/template" element={<Template />} />
+        <Route path="/headingForm" element={<HeadingForm />} />
       </Routes>
     </Router>
   );
