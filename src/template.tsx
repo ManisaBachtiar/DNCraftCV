@@ -2,7 +2,7 @@ import React from "react";
 import template from "./assets/templateImg.jpg";
 import { Button } from "./components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import arrow from "./assets/arrow-left.svg";
+import ArrowLeft from "./components/ui/arrow-left";
 import { Link } from "react-router-dom";
 const Template: React.FC = () => {
   const AddImage: React.FC<{ src: any; alt: string }> = ({ src, alt }) => {
@@ -19,7 +19,7 @@ const Template: React.FC = () => {
     <>
       <div className="bg-[#ECEBEB] sm:bg-red-300 md:bg-green-400 lg:bg-purple-500 pb-40 xl:bg-yellow-400 ">
         <div className="max-w-7xl  mx-auto">
-          <img src={arrow} className="w-9   pt-9 mx-5"/>
+         <ArrowLeft/>
           <h1 className="font-bold text-3xl mx-12 sm:mx-0 pt-5 sm:pt-2 text-center">
             Choose Your Favorite Template
           </h1>
@@ -70,7 +70,7 @@ const Template: React.FC = () => {
         </div>
       </div>
       <div className="bg-white h-16  w-[100%] fixed bottom-0">
-      <Link to={"/sidebar"}>
+      <Link to={"/heading"}>
         <Button className="mx-9 ml-72 sm:ml-[90%] mt-3">Choose</Button>
         </Link>
       </div>

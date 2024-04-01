@@ -7,7 +7,7 @@ import skill from "../../assets/skill.svg";
 import language from "../../assets/language.svg";
 import { Link } from "react-router-dom";
 const Sidebar: React.FC = () => {
-  const [activeItem, setActiveItem] = useState("");
+  const [activeItem, setActiveItem] = useState("Heading");
 
   const AddSideBarItem: React.FC<{ img: any; text: string }> = ({
     img,
@@ -22,13 +22,13 @@ const Sidebar: React.FC = () => {
         onClick={() => setActiveItem(text)}
       >
         <img src={img} className="w-[12%] mr-3" alt="" />
-        <p className="mt-1">{text}</p>
+        <p className="mt-1 ">{text}</p>
       </li>
     );
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen fixed">
       <div className="bg-black w-64">
         <div className="py-9 px-8 bg-black text-white">
           <h1 className="text-xl font-bold">DNCraftCV</h1>
