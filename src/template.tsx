@@ -4,7 +4,7 @@ import { Button } from "./components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import arrow from "./assets/arrow-left.svg";
 import { Link } from "react-router-dom";
-const Form: React.FC = () => {
+const Template: React.FC = () => {
   const AddImage: React.FC<{ src: any; alt: string }> = ({ src, alt }) => {
     return (
       <img
@@ -70,7 +70,7 @@ const Form: React.FC = () => {
         </div>
       </div>
       <div className="bg-white h-16  w-[100%] fixed bottom-0">
-      <Link to={"/headingForm"}>
+      <Link to={"/sidebar"}>
         <Button className="mx-9 ml-72 sm:ml-[90%] mt-3">Choose</Button>
         </Link>
       </div>
@@ -78,4 +78,4 @@ const Form: React.FC = () => {
   );
 };
 
-export default Form;
+export default Template;
