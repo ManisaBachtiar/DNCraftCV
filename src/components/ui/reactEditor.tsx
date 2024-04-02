@@ -27,11 +27,11 @@ const MyComponent: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col ">
       <div className="p-4 w-3/4 ">
         <ReactQuill 
           theme="snow" 
-          className='h-64 '
+          className='h-64'
           value={editorHtml} 
           onChange={(value) => setEditorHtml(value)} 
           modules={modules} 

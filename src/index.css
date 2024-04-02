@@ -75,3 +75,13 @@
     font-family: "Inter", sans-serif;
   }
 }
+
+.ql-editor {
+  background-color: #ECEBEB;
+  border: none;
+}
+
+.ql-editor .ql-toolbar {
+  border:none;
+  @apply bg-none
+}
