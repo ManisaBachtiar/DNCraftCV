@@ -4,15 +4,15 @@ import { Button } from "@/components/ui/button";
 const Heading: React.FC = () => {
   return (
     <>
-    <div className="bg-green-600 resize-none">
-    <ArrowLeft className="ml-80"/>
-      <div className="mx-28 mt-5 ml-80">
+    <div className=" resize-none max-w-7xl mx-auto">
+    <ArrowLeft className="ml-72"/>
+      <div className="mx-28 mt-7 ml-80">
         <h1 className="font-bold text-3xl ">Tell us a little about yourself</h1>
         <p className="mt-2">
           Please provide a brief introduction about yourself{" "}
         </p>
       </div>
-      <div className=" mx-auto  bg-red-400 flex ml-64 justify-center ">
+      <div className=" mx-auto  flex ml-64 justify-center ">
         <div className="w-full mt-5 mx-9 max-w-md">
           <form className="  rounded px-8 pt-6 pb-2 mb-4">
             <div className="mb-4">
@@ -134,7 +134,7 @@ const Heading: React.FC = () => {
           </form>
         </div>
       </div>
-      <Button className=" sm:ml-[85%] mt-2 mb-9">Next</Button>
+      <Button className=" sm:ml-[90%] mt-2 mb-9">Next</Button>
       </div>
     </>
   );
