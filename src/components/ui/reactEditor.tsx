@@ -28,7 +28,7 @@ const MyComponent: React.FC = () => {
 
   return (
     <div className="flex flex-col ">
-      <div className="p-4 w-3/4 ">
+      <div className="p-4 w-[90%] ml-2 ">
         <ReactQuill 
           theme="snow" 
           className='h-64'

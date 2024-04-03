@@ -15,7 +15,7 @@ const Summary: React.FC = () => {
         </p>
       </div> 
       <div className='ml-[19rem] mt-10  h-80'>
-        <h3 className='font-bold ml-4 '>Description :</h3>
+        <h3 className='font-bold ml-6 '>Description :</h3>
         <ReactEditor/>
         </div>
         <Button className=" sm:ml-[90%] mt-16  mb-7">Next</Button>

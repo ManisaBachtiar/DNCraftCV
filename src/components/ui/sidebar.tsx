@@ -43,7 +43,9 @@ const Sidebar: React.FC = () => {
           <Link to ={"/education"}>
           <AddSideBarItem img={education} text="Education" />
           </Link>
+          <Link to = {"/work"}>
           <AddSideBarItem img={work} text="Work Experience" />
+          </Link>
           <AddSideBarItem img={skill} text="Skill" />
           <AddSideBarItem img={language} text="Language" />
         </ul>

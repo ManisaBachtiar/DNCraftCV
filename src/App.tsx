@@ -6,7 +6,7 @@ import Heading from "./forms/heading";
 import Summary from "./forms/summary";
 import Education from "./forms/education";
 import Sidebar from "./components/ui/sidebar";
-
+import Work from "./forms/work";
 const App: React.FC = () => {
  return (
     <Router>
@@ -21,6 +21,8 @@ const App: React.FC = () => {
                 <Route path="/heading" element={<Heading />} />
                 <Route path="/summary" element={<Summary />} />
                 <Route path="/education" element={<Education />} />
+                
+                <Route path="/work" element={<Work />} />
               </Routes>
             </div>
           </div>
