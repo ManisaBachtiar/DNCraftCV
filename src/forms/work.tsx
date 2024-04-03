@@ -13,11 +13,10 @@ const Work: React.FC = () => {
         <ArrowLeft className="ml-72" />
         <div className="mx-28 mt-7 ml-80 b">
           <h1 className="font-bold text-3xl ">
-            Please share your education information with us
+          Please provide your work experience
           </h1>
           <p className="mt-2">
-            Enter your education experience so far, even if you are a current
-            student or did not graduate.{" "}
+          This will assist the company in evaluating your level of competence.{" "}
           </p>
         </div>
         <div className=" mx-auto  flex ml-64 justify-center ">

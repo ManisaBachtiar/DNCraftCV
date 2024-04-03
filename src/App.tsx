@@ -7,6 +7,8 @@ import Summary from "./forms/summary";
 import Education from "./forms/education";
 import Sidebar from "./components/ui/sidebar";
 import Work from "./forms/work";
+import Skill from "./forms/skill";
+import Language from "./forms/language";
 const App: React.FC = () => {
  return (
     <Router>
@@ -21,8 +23,9 @@ const App: React.FC = () => {
                 <Route path="/heading" element={<Heading />} />
                 <Route path="/summary" element={<Summary />} />
                 <Route path="/education" element={<Education />} />
-                
                 <Route path="/work" element={<Work />} />
+                <Route path="/skill" element={<Skill />} />
+                <Route path="/language" element={<Language />} />
               </Routes>
             </div>
           </div>
