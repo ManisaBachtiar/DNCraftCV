@@ -7,6 +7,7 @@ import Summary from "./forms/summary";
 import Education from "./forms/education";
 import Sidebar from "./components/ui/sidebar";
 import Work from "./forms/work";
+import Export from "./forms/export";
 import Skill from "./forms/skill";
 import Language from "./forms/language";
 const App: React.FC = () => {
@@ -15,6 +16,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/template" element={<Template />} />
+        <Route path="/export" element={<Export />} />
         <Route path="/*" element={
           <div className="flex">
             <Sidebar />
@@ -26,9 +28,11 @@ const App: React.FC = () => {
                 <Route path="/work" element={<Work />} />
                 <Route path="/skill" element={<Skill />} />
                 <Route path="/language" element={<Language />} />
+                
               </Routes>
             </div>
           </div>
+          
         } />
       </Routes>
     </Router>
