@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         <h1 className="font-bold text-3xl mx-9 md:mx-0  md:text-center pt-16 md:pt-20">
           Frequently Asked Question
         </h1>
-        <p className="md:text-center mx-9 md:mx-auto pt-3 md:w-1/2 pb-16">
+        <p className="md:text-center mx-9 md:mx-auto text-lg pt-3 md:w-1/2 pb-16">
           We offer a compilation of frequently asked questions along with their
           corresponding answers to help clarify information on this website.
         </p>

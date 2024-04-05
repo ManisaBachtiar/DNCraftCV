@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const HeroSection: React.FC = () => {
   return (
     <>
-    <div className="bg-[#F9F9F9]">
+    <div className="bg-[#F9F9F9] font-poppins">
       <div className="flex max-w-7xl mx-auto relative">
         <div className=" lg:w-2/3 pt-3 bg-white  pb-12  ">
           <nav className="mx-9 md:p-4 flex justify-left items-center ">
@@ -36,9 +36,9 @@ const HeroSection: React.FC = () => {
               </li>
             </ul>
           </nav>
-          <div className="mx-9 md:mx-20 my-16 md:my-20 xl:my-24">
-            <h1 className="text-[2.7rem] md:text-5xl xl:text-6xl font-bold pb-5">DNCraftCV</h1>
-            <p className="text-3xl md:mt-5 md:text-[2.3rem] xl:text-[2.5rem] md:w-[90%] xl:w-[90%] leading-tight   font-light">
+          <div className="mx-9 md:mx-28 my-16  md:my-20 xl:my-24">
+            <h1 className="text-[2.5rem] w-3/4 md:leading-tight md:text-5xl xl:text-[3.5rem] font-bold xl:leading-tight leading-loose ">Craft Your Future with DNCraftCV</h1>
+            <p className=" md:mt-5  text-xl  md:w-[90%] xl:w-[70%] leading-normal   font-light">
               Crafting Your Digital Identity to Transform Experience into
               Opportunity
             </p>

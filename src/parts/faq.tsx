@@ -7,11 +7,11 @@ import {
 const FaqSection: React.FC = () => {
   return (
     <>
-      <div className="max-w-5xl mx-9 md:mx-9 xl:mx-auto bg-white">
+      <div className="max-w-5xl mx-9 md:mx-auto xl:mx-auto  bg-white">
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
             <AccordionTrigger>What is a CV?</AccordionTrigger>
-            <AccordionContent>
+            <AccordionContent className="text-lg">
               A CV, or curriculum vitae, is a document that provides a
               comprehensive overview of a person's professional and academic
               background. It typically includes detailed information about
