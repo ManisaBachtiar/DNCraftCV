@@ -13,26 +13,26 @@ const Education: React.FC = () => {
           <h1 className="font-bold text-3xl ">
             Please share your education information with us
           </h1>
-          <p className="mt-2">
+          <p className="mt-2 w-[80%]">
             Enter your education experience so far, even if you are a current
             student or did not graduate.{" "}
           </p>
         </div>
         <div className=" mx-auto  flex ml-64 justify-center ">
-          <div className="w-full mt-5 mx-9 max-w-md">
+          <div className="w-full mt-2 mx-9 max-w-md">
             <form className="  rounded px-8 pt-6 pb-2 mb-4">
               <div className="mb-4 mt-6">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-3"
                   htmlFor="Profession"
                 >
-                  Profession
+                 Institution Name
                 </label>
                 <input
                   className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="Profession"
                   type="password"
-                  placeholder="e.g.  Manager"
+                  placeholder="e.g. University of Indonesia"
                 />
               </div>
               <div className="mb-4 mt-6">
@@ -40,13 +40,13 @@ const Education: React.FC = () => {
                   className="block text-gray-700 text-sm font-bold mb-3"
                   htmlFor="email"
                 >
-                  Province
+                  Degree
                 </label>
                 <input
                   className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="email"
-                  placeholder="e.g.  DKI Jakarta"
+                  placeholder="select"
                 />
               </div>
               <div className="mb-4 mt-6">

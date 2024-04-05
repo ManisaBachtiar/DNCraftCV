@@ -13,7 +13,7 @@ const CardMedium: React.FC<MediumCardProps> = ({ title, description, img }) => {
   
         <div className="flex justify-between">
           { " " }
-          <div className="font-bold text-xl mt-2 md:mt-0 ">{title}</div>
+          <div className="font-bold text-xl mt-2 md:mt-0  ">{title}</div>
           <img src={img} className="w-[8%] md:w-[6%]" alt="" />
         </div>
   

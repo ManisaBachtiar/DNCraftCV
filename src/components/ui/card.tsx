@@ -25,7 +25,7 @@ const CustomCard: React.FC<CardProps> = ({
       <h2 className="mx-auto text-center mt-2 text-xl font-bold mb-2">
         {title}
       </h2>
-      <p className={`text-base text-center ${contentClassName}`}>{content}</p>
+      <p className={`text-slate-700 text-base text-center ${contentClassName}`}>{content}</p>
     </div>
   );
 };

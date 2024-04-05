@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
           </nav>
           <div className="mx-9 md:mx-28 my-16  md:my-20 xl:my-24">
             <h1 className="text-[2.5rem] w-3/4 md:leading-tight md:text-5xl xl:text-[3.5rem] font-bold xl:leading-tight leading-loose ">Craft Your Future with DNCraftCV</h1>
-            <p className=" md:mt-5  text-xl  md:w-[90%] xl:w-[70%] leading-normal   font-light">
+            <p className=" md:mt-5  text-xl  md:w-[90%] xl:w-[70%] leading-normal text-slate-700   font-light">
               Crafting Your Digital Identity to Transform Experience into
               Opportunity
             </p>
