@@ -27,13 +27,13 @@ const Work: React.FC = () => {
                   className="block text-gray-700 text-sm font-bold mb-3"
                   htmlFor="Profession"
                 >
-                  Profession
+                 Job Title
                 </label>
                 <input
                   className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="Profession"
                   type="password"
-                  placeholder="e.g.  Manager"
+                  placeholder="e.g. Developer"
                 />
               </div>
               <div className="mb-4 mt-6">
@@ -41,7 +41,7 @@ const Work: React.FC = () => {
                   className="block text-gray-700 text-sm font-bold mb-3"
                   htmlFor="email"
                 >
-                  Province
+                 Location
                 </label>
                 <input
                   className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -56,27 +56,22 @@ const Work: React.FC = () => {
                     className="block text-gray-700 text-sm font-bold mb-3"
                     htmlFor="Profession"
                   >
-                    Month
+                    Start Date
                   </label>
                   <input
                     className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="Profession"
                     type="password"
-                    placeholder="e.g.  Manager"
+                    placeholder="Month"
                   />
                 </div>
                 <div className="ml-5">
-                  <label
-                    className="block text-gray-700 text-sm font-bold mb-3"
-                    htmlFor="Profession"
-                  >
-                    Year
-                  </label>
+              
                   <input
-                    className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="bg-[#ECEBEB] mt-8 text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="Profession"
                     type="password"
-                    placeholder="e.g.  Manager"
+                    placeholder="Year"
                   />
                 </div>
               </div>
@@ -89,13 +84,13 @@ const Work: React.FC = () => {
                   className="block text-gray-700 text-sm font-bold mb-3"
                   htmlFor="First Name"
                 >
-                  First Name
+                  Employer
                 </label>
                 <input
                   className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="username"
                   type="text"
-                  placeholder="e.g.  Hanna"
+                  placeholder="e.g.  Depok, Jawa Barat "
                 />
               </div>
               <div className="mb-4 mt-32 flex ">
@@ -104,27 +99,22 @@ const Work: React.FC = () => {
                     className="block text-gray-700 text-sm font-bold mb-3"
                     htmlFor="Profession"
                   >
-                    Month
+                   End Date
                   </label>
                   <input
                     className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="Profession"
                     type="password"
-                    placeholder="e.g.  Manager"
+                    placeholder="Month"
                   />
                 </div>
                 <div className="ml-5">
-                  <label
-                    className="block text-gray-700 text-sm font-bold mb-3"
-                    htmlFor="Profession"
-                  >
-                    Year
-                  </label>
+                 
                   <input
-                    className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="bg-[#ECEBEB] mt-8 text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="Profession"
                     type="password"
-                    placeholder="e.g.  Manager"
+                    placeholder="Year"
                   />
                 </div>
               
