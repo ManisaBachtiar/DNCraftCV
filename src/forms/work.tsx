@@ -6,6 +6,7 @@ import Trash from "../assets/trash.svg";
 import Plus from "../assets/plus.svg";
 import ReactEditor from "@/components/ui/reactEditor";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Link } from "react-router-dom";
 const Work: React.FC = () => {
   return (
     <>
@@ -140,7 +141,9 @@ const Work: React.FC = () => {
           <img src={Plus} className="mr-2" alt="" />
           <p>Add Experience</p>
         </div>
+        <Link to ={"/skill"}>
         <Button className=" sm:ml-[90%] font-bold mt-20 mb-9">Next</Button>
+        </Link>
       </div>
     </>
   );

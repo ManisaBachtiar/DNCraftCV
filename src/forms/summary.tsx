@@ -3,6 +3,7 @@ import ArrowLeft from '@/components/ui/arrow-left';
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import ReactEditor from '@/components/ui/reactEditor';
+import { Link } from 'react-router-dom';
 const Summary: React.FC = () => {
   return (
     <>
@@ -18,7 +19,9 @@ const Summary: React.FC = () => {
         <h3 className='font-bold ml-6 '>Description :</h3>
         <ReactEditor/>
         </div>
+        <Link to={"/education"}>
         <Button className=" sm:ml-[90%] mt-16  mb-7">Next</Button>
+        </Link>
       </div>
     </>
   );

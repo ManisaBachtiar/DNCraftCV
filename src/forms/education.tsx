@@ -4,6 +4,7 @@ import ArrowLeft from "@/components/ui/arrow-left";
 import React from "react";
 import Trash from "../assets/trash.svg";
 import Plus from "../assets/plus.svg";
+import { Link } from "react-router-dom";
 const Education: React.FC = () => {
   return (
     <>
@@ -126,7 +127,9 @@ const Education: React.FC = () => {
           <img src={Plus} className="mr-4" alt="" />
           <p>Add Education</p>
         </div>
+        <Link to ={"/work"}>
         <Button className=" sm:ml-[90%] font-bold mt-20 mb-9">Next</Button>
+        </Link>
       </div>
     </>
   );

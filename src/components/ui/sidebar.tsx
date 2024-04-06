@@ -7,7 +7,7 @@ import skill from "../../assets/skill.svg";
 import language from "../../assets/language.svg";
 import { Link } from "react-router-dom";
 const Sidebar: React.FC = () => {
-  const [activeItem, setActiveItem] = useState("Heading");
+  const [activeItem, setActiveItem] = useState("text");
 
   const AddSideBarItem: React.FC<{ img: any; text: string }> = ({
     img,

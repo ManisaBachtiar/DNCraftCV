@@ -1,6 +1,7 @@
 import React from "react";
 import ArrowLeft from "@/components/ui/arrow-left";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 const Heading: React.FC = () => {
   return (
     <>
@@ -134,7 +135,9 @@ const Heading: React.FC = () => {
           </form>
         </div>
       </div>
+      <Link to ={"/summary"}>
       <Button className=" sm:ml-[90%] mt-2 mb-9">Next</Button>
+      </Link>
       </div>
     </>
   );
