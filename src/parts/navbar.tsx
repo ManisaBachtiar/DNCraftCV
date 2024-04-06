@@ -8,7 +8,7 @@ const HeroSection: React.FC = () => {
     <>
     <div className="bg-[#F9F9F9] font-poppins">
       <div className="flex max-w-7xl mx-auto relative">
-        <div className=" lg:w-2/3 pt-3 bg-white  pb-12  ">
+        <div className=" lg:w-2/3 pt-3  pb-12  ">
           <nav className="mx-9 md:p-4 flex justify-left items-center ">
           <span className="ml-6 hidden md:block text-lg xl:text-xl font-bold mt-3 text-black">
               DNCraftCV
@@ -36,9 +36,9 @@ const HeroSection: React.FC = () => {
               </li>
             </ul>
           </nav>
-          <div className="mx-9 md:mx-28 my-16  md:my-20 xl:my-24">
-            <h1 className="text-[2.5rem] w-3/4 md:leading-tight md:text-5xl xl:text-[3.5rem] font-bold xl:leading-tight leading-loose ">Craft Your Future with DNCraftCV</h1>
-            <p className=" md:mt-5  text-xl  md:w-[90%] xl:w-[70%] leading-normal text-slate-700   font-light">
+          <div className="mx-9 md:mx-28 my-12 lg:my-20 md:my-20 xl:my-24">
+            <h1 className="text-[2.5rem] w-3/4 lg:w-[89%] xl:w-[90%] md:leading-tight md:text-5xl xl:text-[3.5rem] font-bold xl:leading-tight leading-loose ">Craft Your Future with DNCraftCV</h1>
+            <p className=" md:mt-5  text-xl lg:w-[80%] md:w-[90%] xl:w-[70%] leading-normal text-slate-700   font-light">
               Crafting Your Digital Identity to Transform Experience into
               Opportunity
             </p>
@@ -52,11 +52,11 @@ const HeroSection: React.FC = () => {
               Cover Letter
             </Button>
           </div></div>
-            <img src={img} className="mt-20 md:hidden" alt="" />
+            <img src={img} className="mt-20  md:hidden" alt="" />
         </div>
 
         <div className="w-1/3 bg-black hidden lg:block  "></div>
-        <img className="absolute hidden lg:block w-[49%] lg:ml-[36rem] xl:ml-[42rem] mt-32" src={img} alt="" />
+        <img className="absolute hidden lg:block w-[49%] lg:ml-[38rem] xl:ml-[42rem] lg:mt-24 xl:mt-32 mt-36" src={img} alt="" />
       </div>
       </div>
     </>

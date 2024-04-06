@@ -9,13 +9,13 @@ const Language: React.FC = () => {
     <>
       <div className=" max-w-7xl mx-auto ">
     <ArrowLeft className="ml-72"/>
-      <div className="mx-28 mt-7 ml-80 ">
+      <div className="mx-28 mt-7 ml-[19rem] ">
         <h1 className="font-bold text-3xl ">Include the languages you speak to enrich your profile</h1>
         <p className=" w-[90%] mt-2">
         This can enhance your competitiveness in the job market, broaden your career opportunities, and demonstrate your cultural awareness and adaptability.   {" "}
         </p>
       </div> 
-      <div className="  flex ml-80  mx-auto">
+      <div className="  flex ml-[19.5rem]  mx-auto">
         <div className="w-full mt-7 max-w-3xl">
           <form className="  rounded  pt-4 pb-2 mb-4">
               <label
@@ -44,7 +44,7 @@ const Language: React.FC = () => {
             Save
           </button>
         </div>
-      <div className="flex py-1 ml-[20.5rem] mt-5 border-2 border-black rounded-xl px-2 w-44">
+      <div className="flex py-1 ml-[20rem] mt-5 border-2 border-black rounded-xl px-2 w-44">
           <img src={Plus} className="mr-2" alt="" />
           <p className="text-sm">Add Language</p>
         </div>

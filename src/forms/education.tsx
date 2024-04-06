@@ -9,7 +9,7 @@ const Education: React.FC = () => {
     <>
       <div className=" max-w-7xl mx-auto">
         <ArrowLeft className="ml-72" />
-        <div className="mx-28 mt-7 ml-80 b">
+        <div className="mx-28 mt-7 ml-[19rem] b">
           <h1 className="font-bold text-3xl ">
             Please share your education information with us
           </h1>
@@ -20,7 +20,7 @@ const Education: React.FC = () => {
         </div>
         <div className=" mx-auto  flex ml-64 justify-center ">
           <div className="w-full mt-2 mx-9 max-w-md">
-            <form className="  rounded px-8 pt-6 pb-2 mb-4">
+            <form className="  rounded px-5 pt-6 pb-2 mb-4">
               <div className="mb-4 mt-6">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-3"
@@ -66,7 +66,7 @@ const Education: React.FC = () => {
             </form>
           </div>
           <div className="w-full mt-5 mx-9 max-w-md">
-            <form className="  rounded px-8 pt-6 pb-2 mb-4">
+            <form className="  rounded px-5 pt-6 pb-2 mb-4">
               <div className="mt-5">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-3"

@@ -8,13 +8,13 @@ const Skill: React.FC = () => {
     <>
     <div className=" max-w-7xl mx-auto ">
     <ArrowLeft className="ml-72"/>
-      <div className="mx-28 mt-7 ml-80 ">
+      <div className="mx-28 mt-7 ml-[19rem] ">
         <h1 className="font-bold text-3xl ">List some skills to demonstrate your fit for the job</h1>
         <p className=" w-[80%] mt-2">
         Use the Enter key to separate each skill.   {" "}
         </p>
       </div> 
-      <div className='ml-[19rem] mt-10  h-80'>
+      <div className='ml-[18rem] mt-10  h-80'>
         <h3 className='font-bold ml-6 '>Skills :</h3>
         <ReactEditor/>
         </div>
