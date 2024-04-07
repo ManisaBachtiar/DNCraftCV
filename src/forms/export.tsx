@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Img from "../assets/templateImg.jpg";
 import Github from "../assets/github.svg";
 import Coffee from  "../assets/coffee.svg";
+import { Link } from "react-router-dom";
 const Export = () => {
   return (
     <>
@@ -16,7 +17,9 @@ const Export = () => {
       <div className="flex justify-center">
         <div className="bg-white my-8 border-2 border-slate-300 w-96 h-96">
           <div className="flex justify-center items-center flex-col mx-12 mt-28">
+            <Link to ="/template1">
             <Button className="px-12 my-1">Download DOC</Button>
+            </Link>
             <Button className="px-12 my-1">Download PDF</Button>
           </div>
           <div className="flex justify-center items-center mt-4">

@@ -10,6 +10,7 @@ import Work from "./forms/work";
 import Export from "./forms/export";
 import Skill from "./forms/skill";
 import Language from "./forms/language";
+import Template1 from "./template cv/template1cv";
 const App: React.FC = () => {
  return (
     <Router>
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/template" element={<Template />} />
         <Route path="/export" element={<Export />} />
+        <Route path="/template1" element={<Template1/>} />
         <Route path="/*" element={
           <div className="flex">
             <Sidebar />
