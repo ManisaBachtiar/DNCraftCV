@@ -7,6 +7,16 @@ import Plus from "../assets/plus.svg";
 import ReactEditor from "@/components/ui/reactEditor";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Link } from "react-router-dom";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+ 
 const Work: React.FC = () => {
   return (
     <>
@@ -59,20 +69,65 @@ const Work: React.FC = () => {
                   >
                     Start Date
                   </label>
-                  <input
+                  <Select>
+                    <SelectTrigger className="w-[180px] bg-[#ECEBEB]">
+                      <SelectValue placeholder="Month" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Months</SelectLabel>
+                        <SelectItem value="January">January</SelectItem>
+                        <SelectItem value="February">February</SelectItem>
+                        <SelectItem value="March">March</SelectItem>
+                        <SelectItem value="April">April</SelectItem>
+                        <SelectItem value="May">May</SelectItem>
+                        <SelectItem value="June">June</SelectItem>
+                        <SelectItem value="July">July</SelectItem>
+                        <SelectItem value="August">August</SelectItem>
+                        <SelectItem value="September">September</SelectItem>
+                        <SelectItem value="October">October</SelectItem>
+                        <SelectItem value="November">November</SelectItem>
+                        <SelectItem value="December">December</SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+             
+                  {/* <input
                     className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="Profession"
                     type="password"
                     placeholder="Month"
-                  />
+                  /> */}
                 </div>
                 <div className="ml-5">
-                  <input
+                <Select>
+                    <SelectTrigger className="w-[180px] bg-[#ECEBEB] mt-8">
+                      <SelectValue placeholder="Year" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Years</SelectLabel>
+                        {/* Loop through years in reverse order starting from 2024 */}
+                        {Array.from(
+                          { length: new Date().getFullYear() - 1949 },
+                          (_, index) => (
+                            <SelectItem
+                              key={String(new Date().getFullYear() - index)}
+                              value={String(new Date().getFullYear() - index)}
+                            >
+                              {new Date().getFullYear() - index}
+                            </SelectItem>
+                          )
+                        )}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                  {/* <input
                     className="bg-[#ECEBEB] mt-8 text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="Profession"
                     type="password"
                     placeholder="Year"
-                  />
+                  /> */}
                 </div>
               </div>
             </form>
@@ -101,20 +156,64 @@ const Work: React.FC = () => {
                   >
                     End Date
                   </label>
-                  <input
+                  <Select>
+                    <SelectTrigger className="w-[180px] bg-[#ECEBEB]">
+                      <SelectValue placeholder="Month" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Months</SelectLabel>
+                        <SelectItem value="January">January</SelectItem>
+                        <SelectItem value="February">February</SelectItem>
+                        <SelectItem value="March">March</SelectItem>
+                        <SelectItem value="April">April</SelectItem>
+                        <SelectItem value="May">May</SelectItem>
+                        <SelectItem value="June">June</SelectItem>
+                        <SelectItem value="July">July</SelectItem>
+                        <SelectItem value="August">August</SelectItem>
+                        <SelectItem value="September">September</SelectItem>
+                        <SelectItem value="October">October</SelectItem>
+                        <SelectItem value="November">November</SelectItem>
+                        <SelectItem value="December">December</SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                  {/* <input
                     className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="Profession"
                     type="password"
                     placeholder="Month"
-                  />
+                  /> */}
                 </div>
                 <div className="ml-5">
-                  <input
+                <Select>
+                    <SelectTrigger className="w-[180px] bg-[#ECEBEB] mt-8">
+                      <SelectValue placeholder="Year" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Years</SelectLabel>
+                        {/* Loop through years in reverse order starting from 2024 */}
+                        {Array.from(
+                          { length: new Date().getFullYear() - 1949 },
+                          (_, index) => (
+                            <SelectItem
+                              key={String(new Date().getFullYear() - index)}
+                              value={String(new Date().getFullYear() - index)}
+                            >
+                              {new Date().getFullYear() - index}
+                            </SelectItem>
+                          )
+                        )}
+                      </SelectGroup>
+                    </SelectContent>
+                    </Select>
+                  {/* <input
                     className="bg-[#ECEBEB] mt-8 text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="Profession"
                     type="password"
                     placeholder="Year"
-                  />
+                  /> */}
                 </div>
               </div>
               <div className=" flex">

@@ -5,6 +5,16 @@ import React from "react";
 import Trash from "../assets/trash.svg";
 import Plus from "../assets/plus.svg";
 import { Link } from "react-router-dom";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 const Education: React.FC = () => {
   return (
     <>
@@ -27,7 +37,7 @@ const Education: React.FC = () => {
                   className="block text-gray-700 text-sm font-bold mb-3"
                   htmlFor="Profession"
                 >
-                 Institution Name
+                  Institution Name
                 </label>
                 <input
                   className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -47,7 +57,7 @@ const Education: React.FC = () => {
                   className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="email"
-                  placeholder="select"
+                  placeholder="e.g Bachelor's"
                 />
               </div>
               <div className="mb-4 mt-6">
@@ -81,11 +91,9 @@ const Education: React.FC = () => {
                   type="text"
                   placeholder="e.g.  Depok, Jawa Barat "
                 />
-              </div> 
-             
+              </div>
+
               <div className="mb-4 mt-28 flex ">
-                
-             
                 <div>
                   <label
                     className="block text-gray-700 text-sm font-bold mb-3"
@@ -93,21 +101,66 @@ const Education: React.FC = () => {
                   >
                     Graduation Date
                   </label>
-                  <input
+                  <Select>
+                    <SelectTrigger className="w-[180px] bg-[#ECEBEB]">
+                      <SelectValue placeholder="Month" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Months</SelectLabel>
+                        <SelectItem value="January">January</SelectItem>
+                        <SelectItem value="February">February</SelectItem>
+                        <SelectItem value="March">March</SelectItem>
+                        <SelectItem value="April">April</SelectItem>
+                        <SelectItem value="May">May</SelectItem>
+                        <SelectItem value="June">June</SelectItem>
+                        <SelectItem value="July">July</SelectItem>
+                        <SelectItem value="August">August</SelectItem>
+                        <SelectItem value="September">September</SelectItem>
+                        <SelectItem value="October">October</SelectItem>
+                        <SelectItem value="November">November</SelectItem>
+                        <SelectItem value="December">December</SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+
+                  {/* <input
                     className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="Profession"
                     type="password"
                     placeholder="Month"
-                  />
+                  /> */}
                 </div>
                 <div className="ml-5">
-                  
-                  <input
+                  <Select>
+                    <SelectTrigger className="w-[180px] bg-[#ECEBEB] mt-8">
+                      <SelectValue placeholder="Year" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Years</SelectLabel>
+                        {/* Loop through years in reverse order starting from 2024 */}
+                        {Array.from(
+                          { length: new Date().getFullYear() - 1949 },
+                          (_, index) => (
+                            <SelectItem
+                              key={String(new Date().getFullYear() - index)}
+                              value={String(new Date().getFullYear() - index)}
+                            >
+                              {new Date().getFullYear() - index}
+                            </SelectItem>
+                          )
+                        )}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+
+                  {/* <input
                     className="bg-[#ECEBEB] mt-8 text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="Profession"
                     type="password"
                     placeholder="Year"
-                  />
+                  /> */}
                 </div>
               </div>
             </form>
@@ -127,8 +180,8 @@ const Education: React.FC = () => {
           <img src={Plus} className="mr-4" alt="" />
           <p>Add Education</p>
         </div>
-        <Link to ={"/work"}>
-        <Button className=" sm:ml-[90%] font-bold mt-20 mb-9">Next</Button>
+        <Link to={"/work"}>
+          <Button className=" sm:ml-[90%] font-bold mt-20 mb-9">Next</Button>
         </Link>
       </div>
     </>

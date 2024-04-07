@@ -17,7 +17,7 @@ const Template: React.FC = () => {
 
   return (
     <>
-      <div className="bg-[#ECEBEB] sm:bg-red-300 md:bg-green-400 lg:bg-purple-500 pb-40 xl:bg-yellow-400 ">
+      <div className="bg-[#ECEBEB] ">
         <div className="max-w-7xl  mx-auto">
           <Link to={"/"}>
             <img src={arrow} className={`w-9   pt-6 ml-12 `} alt="Arrow Left" />
@@ -36,34 +36,34 @@ const Template: React.FC = () => {
             <div className="mx-2   relative ">
               <AddImage src={template} alt="Placeholder1" />
               <Checkbox
-                className="absolute top-5 sm:top-0 right-4  bg-yellow-500 
+                className="absolute top-5 sm:top-0 right-4 
  z-20"
               />
             </div>
             <div className="mx-2 relative">
               <AddImage src={template} alt="Placeholder1 " />
               <Checkbox
-                className="absolute  bg-green-500 transform top-5 sm:top-0 right-4
+                className="absolute   transform top-5 sm:top-0 right-4
  z-20"
               />
             </div>
             <div className="mx-2 relative">
               <AddImage src={template} alt="Placeholder1 " />
-              <Checkbox className="absolute  bg-green-500 transform top-5 sm:top-0 right-4" />
+              <Checkbox className="absolute  transform top-5 sm:top-0 right-4" />
             </div>
           </div>
           <div className="flex w-4/5   sm:w-full sm:flex-row flex-col  sm:mt-12 mx-auto sm:mx-2 justify-center">
             <div className=" mx-2 relative">
               <AddImage src={template} alt="Placeholder1 " />
-              <Checkbox className="absolute top-5 right-4  bg-yellow-500 " />
+              <Checkbox className="absolute top-2 right-4  " />
             </div>
             <div className="mx-2 relative">
               <AddImage src={template} alt="Placeholder1 " />
-              <Checkbox className="absolute  bg-green-500 transform sm:top-0 top-5 right-4" />
+              <Checkbox className="absolute   transform sm:top-0 top-5 right-4" />
             </div>
             <div className="mx-2 relative">
               <AddImage src={template} alt="Placeholder1 " />
-              <Checkbox className="absolute  bg-green-500 transform sm:top-0 top-5 right-4" />
+              <Checkbox className="absolute   transform sm:top-0 top-5 right-4" />
             </div>
           </div>
         </div>
