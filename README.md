@@ -1,30 +1,66 @@
-# React + TypeScript + Vite
+# DNCraftCV
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DNCraftCV is a cutting-edge web application designed to streamline the process of creating professional CVs. Built with React, TypeScript, and Vite, it offers a fast and efficient development process, incorporating modern tools and technologies to enhance the development experience.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+DNCraftCV is a web application that leverages artificial intelligence to help users create, customize, and download their professional CVs. It's built with React for the UI, TypeScript for type safety, and Vite for fast development and hot module replacement (HMR). The application is designed to be user-friendly, allowing users to easily input their education, work experience, skills, and languages, and then generate a professional CV.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **AI CV Builder**: Utilizes artificial intelligence to suggest improvements and optimizations to your CV.
+- **Multiple CV Templates**: Offers a variety of CV templates to choose from, ensuring your CV stands out.
+- **Export to DOCX and PDF**: Allows users to export their CVs in both DOCX and PDF formats for easy sharing and printing.
+- **Modern Tech Stack**: Built with React, TypeScript, and Vite, offering a fast and efficient development process.
+- **Responsive Design**: The application is designed to be responsive, ensuring a great user experience on all devices.
+- **Customizable CV**: Users can customize their CV by adding their education, work experience, skills, and languages.
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Prerequisites
+
+- Node.js (version 14 or higher)
+- npm (version 6 or higher)
+
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/yourrepository.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd yourrepository
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+4. Start the development server:
+   ```
+   npm run dev
+   ```
+
+### Building the Project
+
+To build the project for production, run:
+
+```
+npm run build
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Previewing the Built Project
+
+To preview the built project, run:
+
+```
+npm run preview
+```
+
+## Contributing
+
+Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) before getting started.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
