@@ -1,38 +1,3 @@
-/**
- * FormHelperContext.tsx
- * a utilities for saving the current form state at GenerateForm.tsx
- * -- <3 SFINXV --
- * 
- * ################################################################
- * example for getting & updating current FormStep:
- * ################################################################
- * ```
- * const { currentStep, setCurrentStep } = useFormHelper();
- * 
- * // currentStep = current form step. 
- * setCurrentStep({ number } - FormStep.HEADING);
- * ```
- * 
- * ################################################################
- * example for saving & loading formData:
- * ################################################################
- * ```
- * const { formData, setFormData } = useFormHelper();
- * 
- * // accessing the data
- * const firstName = formData.heading.firstName;
- * 
- * // updating existing data
- * setFormData(prevData => ({
- *  ...prevData,
- *  heading: {
- *      ...prevData.heading,
- *      firstName: "New Value"
- * }
- * }));
- * ```
- */
-
 import React, { createContext, useContext, useState } from "react";
 
 export enum FormStep {
@@ -48,8 +13,8 @@ export enum FormStep {
 interface FormData {
     template: {
         selectedTemplate: number;
+        isFilled: boolean;
     },
-
     heading: {
         firstName: string;
         lastName: string;
@@ -59,8 +24,8 @@ interface FormData {
         city: string;
         postalCode: string;
         phone: string;
+        isFilled: boolean;
     },
-
     education: {
         institutionName: string;
         degree: string;
@@ -68,10 +33,11 @@ interface FormData {
         schoolLocation: string;
         graduationMonth: number;
         graduationYear: number;
+        isFilled: boolean;
     },
-
     summary: {
-        description: ""
+        description: string;
+        isFilled: boolean;
     }
 }
 
@@ -79,24 +45,16 @@ const FormHelperContext = createContext<{
     currentStep: FormStep;
     setCurrentStep: React.Dispatch<React.SetStateAction<FormStep>>;
 
-    // unlogical, but wait, it's works!
-    isFormFilled: boolean;
-    setFormFilled: React.Dispatch<React.SetStateAction<boolean>>;
-
     formData: FormData;
     setFormData: React.Dispatch<React.SetStateAction<FormData>>;
 }>({
     currentStep: FormStep.HEADING,
     setCurrentStep: () => {},
-
-    isFormFilled: false,
-    setFormFilled: () => {},
-    
     formData: {
         template: {
             selectedTemplate: 0,
+            isFilled: false,
         },
-
         heading: {
             firstName: "",
             profession: "",
@@ -106,6 +64,7 @@ const FormHelperContext = createContext<{
             city: "",
             postalCode: "",
             phone: "",
+            isFilled: false,
         },
         education: {
             institutionName: "",
@@ -114,22 +73,23 @@ const FormHelperContext = createContext<{
             schoolLocation: "",
             graduationMonth: 0,
             graduationYear: 0,
+            isFilled: false,
         },
         summary: {
             description: "",
+            isFilled: false,
         }
     },
     setFormData: () => {},
 });
-   
+
 export const FormHelperProvider: React.FC<{children?: React.ReactNode;}> = ({ children }) => {
     const [currentStep, setCurrentStep] = useState<FormStep>(FormStep.TEMPLATE);
-    const [isFormFilled, setFormFilled] = useState<boolean>(false);
     const [formData, setFormData] = useState<FormData>({
-        template : {
+        template: {
             selectedTemplate: 0,
+            isFilled: false,
         },
-
         heading: {
             firstName: "",
             profession: "",
@@ -139,6 +99,7 @@ export const FormHelperProvider: React.FC<{children?: React.ReactNode;}> = ({ ch
             city: "",
             postalCode: "",
             phone: "",
+            isFilled: false,
         },
         education: {
             institutionName: "",
@@ -147,21 +108,20 @@ export const FormHelperProvider: React.FC<{children?: React.ReactNode;}> = ({ ch
             schoolLocation: "",
             graduationMonth: 0,
             graduationYear: 0,
+            isFilled: false,
         },
         summary: {
             description: "",
+            isFilled: false,
         }
     });
 
-    const setCurrentStepWrapper = (newStep: FormStep) => {
-        // if (!isFormFilled)
-        //     return;
-        
-        setCurrentStep(newStep);
-    };
+    // const setCurrentStepWrapper = (newStep: FormStep) => {
+    //     setCurrentStep(newStep);
+    // };
 
     return (
-        <FormHelperContext.Provider value={{ currentStep, setCurrentStep: setCurrentStepWrapper, isFormFilled, setFormFilled, formData, setFormData }}>
+        <FormHelperContext.Provider value={{ currentStep, setCurrentStep, formData, setFormData }}>
             {children}
         </FormHelperContext.Provider>
     );

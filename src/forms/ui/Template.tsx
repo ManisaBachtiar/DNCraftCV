@@ -4,10 +4,13 @@ import { FormStep, useFormHelper } from "@/utils/FormHelperContext";
 
 import arrow from "@/assets/arrow-left.svg";
 import template from "@/assets/templateImg.jpg";
+import { useToast } from "@/components/ui/use-toast";
 
 const Template: React.FC = () => {
 
-    const { setCurrentStep, setFormFilled, setFormData } = useFormHelper();
+    const { toast } = useToast();
+
+    const { setCurrentStep,  setFormData } = useFormHelper();
 
     const [selectedTemplate, setSelectedTemplate] = useState<number | null>(null);
 
@@ -80,21 +83,7 @@ const Template: React.FC = () => {
         </div>
         <div className="bg-white h-16 w-full fixed bottom-0 z-50 box-border flex items-center justify-center">
             <Button onClick={() => {
-                // update the formData?
-                setFormData(prevData => ({
-                    ...prevData,
-                    template: {
-                        selectedTemplate: selectedTemplate,
-                    },
-                }));
-
-                if (selectedTemplate < 1)
-                {
-                    setFormFilled(false);
-                }
-
-                setFormFilled(true);
-                setCurrentStep(FormStep.HEADING); // move to HEADING
+                setCurrentStep(FormStep.HEADING); // Move to HEADING if the form is filled
             }} className="mx-9 ml-72 sm:ml-[90%]">Choose</Button>
         </div>
         </>

@@ -12,7 +12,7 @@ const Heading: React.FC = () => {
 
   const { toast } = useToast();
 
-  const { currentStep, setCurrentStep, isFormFilled, setFormFilled, formData, setFormData } = useFormHelper();
+  const { currentStep, setCurrentStep, formData, setFormData } = useFormHelper();
 
   const [firstName, setFirstName] = useState(formData.heading.firstName);
   const [lastName, setLastName] = useState(formData.heading.lastName);
@@ -90,8 +90,6 @@ const Heading: React.FC = () => {
    };
 
   const handleNext = () => {
-    setFormFilled(validateInput());
-
     // update form!
     setFormData(prevData => ({
       ...prevData,
