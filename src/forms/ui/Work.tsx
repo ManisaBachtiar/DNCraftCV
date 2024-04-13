@@ -2,9 +2,9 @@
 import { Button } from "@/components/ui/button";
 import ArrowLeft from "@/components/ui/arrow-left";
 import React from "react";
-import Trash from "../assets/trash.svg";
-import Plus from "../assets/plus.svg";
-import ReactEditor from "@/components/ui/reactEditor";
+import Trash from "@/assets/trash.svg";
+import Plus from "@/assets/plus.svg";
+import ReactEditor from "@/components/ui/react-editor";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Link } from "react-router-dom";
 import {

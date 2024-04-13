@@ -1,5 +1,7 @@
 import React from "react";
-import CustomCard from "@/components/ui/card";
+
+import CustomCard from "@/components/ui/custom-card";
+
 import input from "../assets/input.svg";
 import choose from "../assets/choose.svg";
 import export1 from "../assets/export.svg";
@@ -37,5 +39,6 @@ const StepSection: React.FC = () => {
       </div>
     </>
   );
-};
+}
+
 export default StepSection;

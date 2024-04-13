@@ -2,7 +2,7 @@
 import ArrowLeft from '@/components/ui/arrow-left';
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import ReactEditor from '@/components/ui/reactEditor';
+import ReactEditor from '@/components/ui/react-editor';
 import { Link } from 'react-router-dom';
 const Skill: React.FC = () => {
   return (

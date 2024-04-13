@@ -1,5 +1,7 @@
 import React from "react";
-import CustomCard from "@/components/ui/card";
+
+import CustomCard from "@/components/ui/custom-card";
+
 import cv_image from "../assets/CV.svg";
 import ai_image from "../assets/AI.svg";
 import cl_image from "../assets/CL.svg";
@@ -7,10 +9,7 @@ import cl_image from "../assets/CL.svg";
 const ServicesSection: React.FC = () => {
   return (
     <>
-  
-      <div
-        className={`max-w-5xl flex flex-col md:flex-row  mx-auto  lg:px-0 justify-center items-center py-12`}
-      >
+      <div className={`max-w-5xl flex flex-col md:flex-row  mx-auto  lg:px-0 justify-center items-center py-12`}>
         <CustomCard
           customClass="bg-white h-72  "
           img={cv_image}
@@ -31,7 +30,6 @@ const ServicesSection: React.FC = () => {
           title="AI Assistant"
           content="With our AI-powered assistance, you can effortlessly refine and rephrase sentences for both your CV and cover letter."
         />
-        
       </div>
     </>
   );

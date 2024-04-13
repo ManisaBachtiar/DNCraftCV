@@ -1,19 +1,10 @@
-// import React, { useState } from 'react';
-// import ReactQuill from 'react-quill';
-// import 'react-quill/dist/quill.snow.css';
 
-// const MyComponent: React.FC = function () {
-//   const [value, setValue] = useState('');
-
-//   return <ReactQuill className='bg-red-300 h-96' theme="snow" value={value} onChange={setValue} />;
-// }
-// export default MyComponent;
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // Import Quill's CSS
-import 'tailwindcss/tailwind.css'; // Import Tailwind CSS (jika belum di-import)
+import 'react-quill/dist/quill.snow.css';
+import 'tailwindcss/tailwind.css';
 
-const MyComponent: React.FC = () => {
+const ReactEditor: React.FC = () => {
   const [editorHtml, setEditorHtml] = useState<string>('');
 
   const modules = {
@@ -42,4 +33,4 @@ const MyComponent: React.FC = () => {
   );
 };
 
-export default MyComponent;
+export default ReactEditor;
