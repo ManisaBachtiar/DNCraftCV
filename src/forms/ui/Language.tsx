@@ -3,7 +3,7 @@ import ArrowLeft from '@/components/ui/arrow-left';
 import { Button } from "@/components/ui/button";
 import Plus from "@/assets/plus.svg";  
 import Trash from "@/assets/trash.svg";
-import { Link } from "react-router-dom";
+
 const Language: React.FC = () => {
   return (
     <>
@@ -48,9 +48,7 @@ const Language: React.FC = () => {
           <img src={Plus} className="mr-2" alt="" />
           <p className="text-sm">Add Language</p>
         </div>
-        <Link to={"/export"}>
       <Button className=" sm:ml-[90%] mt-12  mb-7">Submit</Button>
-     </Link>
       </div> 
     </>
   );

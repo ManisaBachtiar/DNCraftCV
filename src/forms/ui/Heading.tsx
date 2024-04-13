@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-import { useFormHelper, FormStep } from "@/utils/FormHelperContext";
+import { useFormHelper } from "@/utils/FormHelperContext";
 
 import ArrowLeft from "@/components/ui/arrow-left";
 import { Button } from "@/components/ui/button";
@@ -12,19 +12,46 @@ const Heading: React.FC = () => {
 
   const { toast } = useToast();
 
-  const { currentStep, setCurrentStep, formData, setFormData } = useFormHelper();
+  const { currentStep, setCurrentStep, isFormFilled, setFormFilled, formData, setFormData } = useFormHelper();
+
+  const [firstName, setFirstName] = useState(formData.heading.firstName);
+  const [lastName, setLastName] = useState(formData.heading.lastName);
+  const [profession, setProfession] = useState(formData.heading.profession);
+  const [province, setProvince] = useState(formData.heading.province);
+  const [email, setEmail] = useState(formData.heading.email);
+  const [city, setCity] = useState(formData.heading.city);
+  const [postalCode, setPostalCode] = useState(formData.heading.postalCode);
+  const [phone, setPhone] = useState(formData.heading.phone);
+
+  // Update formData whenever any state variable changes (im scared with the performance)
+  useEffect(() => {
+    setFormData(prevData => ({
+      ...prevData,
+      heading: {
+        firstName,
+        lastName,
+        profession,
+        province,
+        email,
+        city,
+        postalCode,
+        phone
+      }
+    }));
+  }, [firstName, lastName, profession, province, email, city, postalCode, phone, setFormData]);
+
 
   // ( i think this one is a bad practice, is there a simple way to do this? )
   // just kinda lazy to use lib like zod and react form stuff
   const validateInput = () => {
-    const firstName = document.getElementById('firstName')?.value.trim();
-    const profession = document.getElementById('profession')?.value.trim();
-    const province = document.getElementById('province')?.value.trim();
-    const email = document.getElementById('email')?.value.trim();
-    const lastName = document.getElementById('lastName')?.value.trim();
-    const city = document.getElementById('city')?.value.trim();
-    const postalCode = document.getElementById('postalCode')?.value.trim();
-    const phone = document.getElementById('phone')?.value.trim();
+    // const firstName = document.getElementById('firstName')?.value.trim();
+    // const profession = document.getElementById('profession')?.value.trim();
+    // const province = document.getElementById('province')?.value.trim();
+    // const email = document.getElementById('email')?.value.trim();
+    // const lastName = document.getElementById('lastName')?.value.trim();
+    // const city = document.getElementById('city')?.value.trim();
+    // const postalCode = document.getElementById('postalCode')?.value.trim();
+    // const phone = document.getElementById('phone')?.value.trim();
    
     // Check if any of the inputs are empty
     if (!firstName || !profession || !province || !email || !lastName || !city || !postalCode || !phone) {
@@ -63,17 +90,7 @@ const Heading: React.FC = () => {
    };
 
   const handleNext = () => {
-    if (!validateInput())
-      return;
-
-    const firstName = document.getElementById('firstName')?.value.trim();
-    const profession = document.getElementById('profession')?.value.trim();
-    const province = document.getElementById('province')?.value.trim();
-    const email = document.getElementById('email')?.value.trim();
-    const lastName = document.getElementById('lastName')?.value.trim();
-    const city = document.getElementById('city')?.value.trim();
-    const postalCode = document.getElementById('postalCode')?.value.trim();
-    const phone = document.getElementById('phone')?.value.trim();
+    setFormFilled(validateInput());
 
     // update form!
     setFormData(prevData => ({
@@ -92,8 +109,6 @@ const Heading: React.FC = () => {
 
     setCurrentStep(currentStep + 1);
   }
-
-  const { firstName, lastName, profession, province, email, city, postalCode, phone } = formData.heading;
 
   return (
     <>
@@ -120,7 +135,8 @@ const Heading: React.FC = () => {
                 id="firstName"
                 type="text"
                 placeholder="e.g.  Hanna"
-                defaultValue={firstName}
+                value={firstName}
+                onChange={(e) => { setFirstName(e.target.value); }}
               />
             </div>
             <div className="mb-4 mt-6">
@@ -135,7 +151,8 @@ const Heading: React.FC = () => {
                 id="profession"
                 type="text"
                 placeholder="e.g.  Manager"
-                defaultValue={profession}
+                value={profession}
+                onChange={(e) => { setProfession(e.target.value); }}
               />
             </div>
             <div className="mb-4 mt-6">
@@ -150,7 +167,8 @@ const Heading: React.FC = () => {
                 id="province"
                 type="email"
                 placeholder="e.g.  DKI Jakarta"
-                defaultValue={province}
+                value={province}
+                onChange={(e) => { setProvince(e.target.value); }}
               />
             </div>
             <div className="mb-4 mt-6">
@@ -165,7 +183,8 @@ const Heading: React.FC = () => {
                 id="email"
                 type="email"
                 placeholder="e.g.  hannaputri@nameserver.com"
-                defaultValue={email}
+                value={email}
+                onChange={(e) => { setEmail(e.target.value); }}
               />
             </div>
           </form>
@@ -184,7 +203,8 @@ const Heading: React.FC = () => {
                 id="lastName"
                 type="text"
                 placeholder="e.g.  Putri"
-                defaultValue={lastName}
+                value={lastName}
+                onChange={(e) => { setLastName(e.target.value); }}
               />
             </div>
             <div className="mb-4 mt-6">
@@ -199,7 +219,8 @@ const Heading: React.FC = () => {
                 id="city"
                 type="text"
                 placeholder="e.g.  Jakarta"
-                defaultValue={city}
+                value={city}
+                onChange={(e) => { setCity(e.target.value); }}
               />
             </div>
             <div className="mb-4 mt-6">
@@ -214,7 +235,8 @@ const Heading: React.FC = () => {
                 id="postalCode"
                 type="number"
                 placeholder="e.g.  99999"
-                defaultValue={postalCode}
+                value={postalCode}
+                onChange={(e) => { setPostalCode(e.target.value); }}
               />
             </div>
             <div className="mb-4 mt-6">
@@ -229,7 +251,8 @@ const Heading: React.FC = () => {
                 id="phone"
                 type="tel"
                 placeholder="e.g.  +62 123 4567"
-                defaultValue={phone}
+                value={phone}
+                onChange={(e) => { setPhone(e.target.value); }}
               />
             </div>
           </form>

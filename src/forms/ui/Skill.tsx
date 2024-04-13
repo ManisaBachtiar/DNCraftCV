@@ -3,7 +3,7 @@ import ArrowLeft from '@/components/ui/arrow-left';
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import ReactEditor from '@/components/ui/react-editor';
-import { Link } from 'react-router-dom';
+
 const Skill: React.FC = () => {
   return (
     <>
@@ -19,9 +19,7 @@ const Skill: React.FC = () => {
         <h3 className='font-bold ml-6 '>Skills :</h3>
         <ReactEditor/>
         </div>
-        <Link to ={"/language"}>
         <Button className=" sm:ml-[90%] mt-16  mb-7">Next</Button>
-        </Link>
       </div>
     </>
   );

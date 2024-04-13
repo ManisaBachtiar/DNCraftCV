@@ -79,12 +79,19 @@ const FormHelperContext = createContext<{
     currentStep: FormStep;
     setCurrentStep: React.Dispatch<React.SetStateAction<FormStep>>;
 
+    // unlogical, but wait, it's works!
+    isFormFilled: boolean;
+    setFormFilled: React.Dispatch<React.SetStateAction<boolean>>;
+
     formData: FormData;
     setFormData: React.Dispatch<React.SetStateAction<FormData>>;
 }>({
     currentStep: FormStep.HEADING,
     setCurrentStep: () => {},
 
+    isFormFilled: false,
+    setFormFilled: () => {},
+    
     formData: {
         template: {
             selectedTemplate: 0,
@@ -117,6 +124,7 @@ const FormHelperContext = createContext<{
    
 export const FormHelperProvider: React.FC<{children?: React.ReactNode;}> = ({ children }) => {
     const [currentStep, setCurrentStep] = useState<FormStep>(FormStep.TEMPLATE);
+    const [isFormFilled, setFormFilled] = useState<boolean>(false);
     const [formData, setFormData] = useState<FormData>({
         template : {
             selectedTemplate: 0,
@@ -145,8 +153,15 @@ export const FormHelperProvider: React.FC<{children?: React.ReactNode;}> = ({ ch
         }
     });
 
+    const setCurrentStepWrapper = (newStep: FormStep) => {
+        // if (!isFormFilled)
+        //     return;
+        
+        setCurrentStep(newStep);
+    };
+
     return (
-        <FormHelperContext.Provider value={{ currentStep, setCurrentStep, formData, setFormData }}>
+        <FormHelperContext.Provider value={{ currentStep, setCurrentStep: setCurrentStepWrapper, isFormFilled, setFormFilled, formData, setFormData }}>
             {children}
         </FormHelperContext.Provider>
     );

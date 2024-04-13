@@ -7,7 +7,7 @@ import template from "@/assets/templateImg.jpg";
 
 const Template: React.FC = () => {
 
-    const { setCurrentStep, setFormData } = useFormHelper();
+    const { setCurrentStep, setFormFilled, setFormData } = useFormHelper();
 
     const [selectedTemplate, setSelectedTemplate] = useState<number | null>(null);
 
@@ -56,24 +56,24 @@ const Template: React.FC = () => {
 
             <div className="flex-col  w-4/5   mx-auto sm:w-full  sm:flex-row flex mt-5 sm:mt-12  justify-center">
                 <div className="mx-2   relative ">
-                <AddImage src={template} alt="Placeholder1" templateNumber={0}/>
-                </div>
-                <div className="mx-2 relative">
-                <AddImage src={template} alt="Placeholder1 " templateNumber={1}/>
+                <AddImage src={template} alt="Placeholder1" templateNumber={1}/>
                 </div>
                 <div className="mx-2 relative">
                 <AddImage src={template} alt="Placeholder1 " templateNumber={2}/>
                 </div>
+                <div className="mx-2 relative">
+                <AddImage src={template} alt="Placeholder1 " templateNumber={3}/>
+                </div>
             </div>
             <div className="flex w-4/5   sm:w-full sm:flex-row flex-col  sm:mt-12 mx-auto sm:mx-2 justify-center">
                 <div className=" mx-2 relative">
-                <AddImage src={template} alt="Placeholder1 " templateNumber={3}/>
-                </div>
-                <div className="mx-2 relative">
                 <AddImage src={template} alt="Placeholder1 " templateNumber={4}/>
                 </div>
                 <div className="mx-2 relative">
                 <AddImage src={template} alt="Placeholder1 " templateNumber={5}/>
+                </div>
+                <div className="mx-2 relative">
+                <AddImage src={template} alt="Placeholder1 " templateNumber={6}/>
                 </div>
             </div>
             </div>
@@ -88,6 +88,12 @@ const Template: React.FC = () => {
                     },
                 }));
 
+                if (selectedTemplate < 1)
+                {
+                    setFormFilled(false);
+                }
+
+                setFormFilled(true);
                 setCurrentStep(FormStep.HEADING); // move to HEADING
             }} className="mx-9 ml-72 sm:ml-[90%]">Choose</Button>
         </div>
