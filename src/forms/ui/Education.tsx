@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -15,12 +13,6 @@ import ArrowLeft from "@/components/ui/arrow-left";
 import Plus from "@/assets/plus.svg";
 
 const Education: React.FC = () => {
-  const [isOnAddEducationMode, setOnAddEducationMode] = useState(false);
-
-  const __AddEducationBTNHandler = () => {
-    setOnAddEducationMode(true);
-  }
-
   const EducationFillForm = () => {
     return (
       <div className=" mx-auto flex ml-64 justify-center">
@@ -116,12 +108,6 @@ const Education: React.FC = () => {
                     </SelectGroup>
                   </SelectContent>
                 </Select>
-                {/* <input
-                  className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  id="Profession"
-                  type="text"
-                  placeholder="Month"
-                /> */}
               </div>
               <div className="ml-5">
                 <Select>
@@ -131,7 +117,6 @@ const Education: React.FC = () => {
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>Years</SelectLabel>
-                      {/* Loop through years in reverse order starting from 2024 */}
                       {Array.from(
                         { length: new Date().getFullYear() - 1949 },
                         (_, index) => (
@@ -146,12 +131,6 @@ const Education: React.FC = () => {
                     </SelectGroup>
                   </SelectContent>
                 </Select>
-                {/* <input
-                  className="bg-[#ECEBEB] mt-8 text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  id="Profession"
-                  type="text"
-                  placeholder="Year"
-                /> */}
               </div>
             </div>
           </form>
@@ -173,10 +152,8 @@ const Education: React.FC = () => {
             student or did not graduate.{" "}
           </p>
         </div>
-
-        {isOnAddEducationMode ? <EducationFillForm /> : ""}
-
-        <div onClick={__AddEducationBTNHandler} className="flex py-2 ml-[19rem] mt-5 border-2 border-black rounded-xl px-2 w-44 cursor-pointer hover:bg-black hover:text-white transition-colors">
+        <EducationFillForm />
+        <div  className="flex py-2 ml-[19rem] mt-5 border-2 border-black rounded-xl px-2 w-44 cursor-pointer hover:bg-black hover:text-white transition-colors">
           <img src={Plus} className="mr-4" alt="" />
           <p>Add Education</p>
         </div>
