@@ -87,23 +87,23 @@ const Heading: React.FC = () => {
    
     // nvm, just return true. You passed the check!
     return true;
-   };
+  };
 
   const handleNext = () => {
     // update form!
-    setFormData(prevData => ({
-      ...prevData,
-      heading: {
-        firstName: firstName,
-        lastName: lastName,
-        profession: profession,
-        province: province,
-        email: email,
-        city: city,
-        postalCode: postalCode,
-        phone: phone
-      }
-    }));
+    // setFormData(prevData => ({
+    //   ...prevData,
+    //   heading: {
+    //     firstName: firstName,
+    //     lastName: lastName,
+    //     profession: profession,
+    //     province: province,
+    //     email: email,
+    //     city: city,
+    //     postalCode: postalCode,
+    //     phone: phone
+    //   }
+    // }));
 
     setCurrentStep(currentStep + 1);
   }

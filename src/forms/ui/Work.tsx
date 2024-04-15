@@ -16,8 +16,59 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { useFormHelper } from "@/utils/FormHelperContext";
+import DataList from "@/components/ui/data-list";
  
 const Work: React.FC = () => {
+  
+  const { formData, setFormData } = useFormHelper();
+
+  const AddExperience = () => {
+
+    const newExperienceData = {
+     jobTitle: "Developer",
+     location : "DKI Jakarta",
+     employer: "google",
+     startDate: 0,
+     endDate: 0,
+    };
+    
+    setFormData(prevData => ({
+      ...prevData,
+      work: {
+        data: prevData.work.data.concat(newExperienceData),
+        isFilled: true,
+      }
+    }))
+  }
+
+  const ShowExperience = () => {
+    return (
+      <>
+        {formData.work.data.map((experience, idx) => {
+          <DataList
+            key={idx}
+            title={experience.jobTitle}
+            description={experience.location}
+            onDelete={() => {
+              setFormData(prevData => {
+                const updatedExperienceData = [ ...prevData.work.data ];
+                updatedExperienceData.splice(idx, 1);
+                return {
+                  ...prevData,
+                  work: {
+                    ...prevData.work,
+                    data: updatedExperienceData,
+                  }
+                }
+              })
+            }}
+          />
+        })}
+        
+      </>
+    );
+  }
   return (
     <>
       <div className=" max-w-7xl mx-auto">
@@ -32,6 +83,7 @@ const Work: React.FC = () => {
         </div>
         <div className=" mx-auto  flex ml-64 justify-center ">
           <div className="w-full  mx-9 max-w-md">
+            <ShowExperience />
             <form className="  rounded px-5 pt-6 pb-2 mb-4">
               <div className="mb-4 mt-6">
                 <label
@@ -91,13 +143,6 @@ const Work: React.FC = () => {
                       </SelectGroup>
                     </SelectContent>
                   </Select>
-             
-                  {/* <input
-                    className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="Profession"
-                    type="password"
-                    placeholder="Month"
-                  /> */}
                 </div>
                 <div className="ml-5">
                 <Select>
@@ -122,12 +167,6 @@ const Work: React.FC = () => {
                       </SelectGroup>
                     </SelectContent>
                   </Select>
-                  {/* <input
-                    className="bg-[#ECEBEB] mt-8 text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="Profession"
-                    type="password"
-                    placeholder="Year"
-                  /> */}
                 </div>
               </div>
             </form>
@@ -178,12 +217,7 @@ const Work: React.FC = () => {
                       </SelectGroup>
                     </SelectContent>
                   </Select>
-                  {/* <input
-                    className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="Profession"
-                    type="password"
-                    placeholder="Month"
-                  /> */}
+                  
                 </div>
                 <div className="ml-5">
                 <Select>
@@ -208,12 +242,6 @@ const Work: React.FC = () => {
                       </SelectGroup>
                     </SelectContent>
                     </Select>
-                  {/* <input
-                    className="bg-[#ECEBEB] mt-8 text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="Profession"
-                    type="password"
-                    placeholder="Year"
-                  /> */}
                 </div>
               </div>
               <div className=" flex">
@@ -236,7 +264,7 @@ const Work: React.FC = () => {
             Save
           </button>
         </div>
-        <div className="flex py-1 ml-[20rem] mt-5 border-2 border-black rounded-xl px-2 w-44">
+        <div onClick={AddExperience} className="flex py-2 ml-[19rem] mt-5 border-2 border-black rounded-xl px-2 w-44 cursor-pointer hover:bg-black hover:text-white transition-colors">
           <img src={Plus} className="mr-2" alt="" />
           <p>Add Experience</p>
         </div>

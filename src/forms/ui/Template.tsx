@@ -5,12 +5,13 @@ import { FormStep, useFormHelper } from "@/utils/FormHelperContext";
 import arrow from "@/assets/arrow-left.svg";
 import template from "@/assets/templateImg.jpg";
 import { useToast } from "@/components/ui/use-toast";
+import { Link } from "react-router-dom";
 
 const Template: React.FC = () => {
 
     const { toast } = useToast();
 
-    const { setCurrentStep,  setFormData } = useFormHelper();
+    const { setCurrentStep, setFormData } = useFormHelper();
 
     const [selectedTemplate, setSelectedTemplate] = useState<number | null>(null);
 
@@ -83,6 +84,24 @@ const Template: React.FC = () => {
         </div>
         <div className="bg-white h-16 w-full fixed bottom-0 z-50 box-border flex items-center justify-center">
             <Button onClick={() => {
+                if (selectedTemplate === null || selectedTemplate < 1)
+                {
+                    toast({
+                        title: "Onii-chan, something went wrong",
+                        description: "User didn't selected any template yet"
+                    });
+
+                    return;
+                }
+
+                // setFormData...
+                setFormData(prevData => ({
+                    ...prevData,
+                    template: {
+                        selectedTemplate: selectedTemplate
+                    }
+                }));
+
                 setCurrentStep(FormStep.HEADING); // Move to HEADING if the form is filled
             }} className="mx-9 ml-72 sm:ml-[90%]">Choose</Button>
         </div>

@@ -26,17 +26,30 @@ interface FormData {
         phone: string;
         isFilled: boolean;
     },
-    education: {
-        institutionName: string;
-        degree: string;
-        fieldOfStudy: string;
-        schoolLocation: string;
-        graduationMonth: number;
-        graduationYear: number;
-        isFilled: boolean;
-    },
     summary: {
         description: string;
+        isFilled: boolean;
+    },
+    education: {
+        data: {
+            institutionName: string;
+            degree: string;
+            fieldOfStudy: string;
+            schoolLocation: string;
+            graduationDate: number; // should use unix timestamp and convert it to smth
+        }[];
+
+        isFilled: boolean;
+    },
+    work: {
+        data: {
+            jobTitle: string;
+            location: string;
+            employer: string;
+            startDate: number; // should use unix timestamp and convert it to smth
+            endDate: number; // should use unix timestamp and convert it to smth
+        }[];
+        
         isFilled: boolean;
     }
 }
@@ -50,36 +63,7 @@ const FormHelperContext = createContext<{
 }>({
     currentStep: FormStep.HEADING,
     setCurrentStep: () => {},
-    formData: {
-        template: {
-            selectedTemplate: 0,
-            isFilled: false,
-        },
-        heading: {
-            firstName: "",
-            profession: "",
-            province: "",
-            email: "",
-            lastName: "",
-            city: "",
-            postalCode: "",
-            phone: "",
-            isFilled: false,
-        },
-        education: {
-            institutionName: "",
-            degree: "",
-            fieldOfStudy: "",
-            schoolLocation: "",
-            graduationMonth: 0,
-            graduationYear: 0,
-            isFilled: false,
-        },
-        summary: {
-            description: "",
-            isFilled: false,
-        }
-    },
+    formData: {} as FormData,
     setFormData: () => {},
 });
 
@@ -101,24 +85,19 @@ export const FormHelperProvider: React.FC<{children?: React.ReactNode;}> = ({ ch
             phone: "",
             isFilled: false,
         },
-        education: {
-            institutionName: "",
-            degree: "",
-            fieldOfStudy: "",
-            schoolLocation: "",
-            graduationMonth: 0,
-            graduationYear: 0,
-            isFilled: false,
-        },
         summary: {
             description: "",
             isFilled: false,
+        },
+        education: {
+            data: [],
+            isFilled: false,
+        },
+        work: {
+            data: [],
+            isFilled: false,
         }
     });
-
-    // const setCurrentStepWrapper = (newStep: FormStep) => {
-    //     setCurrentStep(newStep);
-    // };
 
     return (
         <FormHelperContext.Provider value={{ currentStep, setCurrentStep, formData, setFormData }}>

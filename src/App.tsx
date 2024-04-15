@@ -1,8 +1,12 @@
 import React from "react";
 
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
-import { NavigationProvider, useNavigationContext } from "@/utils/NavigationContext";
+// import { NavigationProvider, useNavigationContext } from "@/utils/NavigationContext";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { NavigationProvider } from "@/utils/NavigationContext";
 import ToasterProvider from "@/utils/ToastProvider";
 
 import Home from "@/pages/Home";
@@ -32,12 +36,17 @@ export default function App() {
 
 // a condom (literally a wrapper) so user shouldn't go straight inside "/generate"
 const FormCondom: React.FC = () => {
-  const { hasVisitedHome } = useNavigationContext();
+  
+  // let's just forget about the condom protection, we didn't use that during the developement process
+  
+  { /* const { hasVisitedHome } = useNavigationContext();
  
   // if user haven't visited the home page yet return to home!
   // that's how a protection works!, it blocks anything going inside you!
   if (!hasVisitedHome)
      return <Navigate to="/" replace />;
  
-  return <GenerateForm />;
+return <GenerateForm />; */ }
+
+  return <GenerateForm />
 };

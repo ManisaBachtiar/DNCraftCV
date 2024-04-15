@@ -44,7 +44,7 @@ const Language: React.FC = () => {
             Save
           </button>
         </div>
-      <div className="flex py-1 ml-[19rem] mt-5 border-2 border-black rounded-xl px-2 w-44">
+      <div className="flex py-2 ml-[19rem] mt-5 border-2 border-black rounded-xl px-2 w-44">
           <img src={Plus} className="mr-2" alt="" />
           <p className="text-sm">Add Language</p>
         </div>

@@ -1,3 +1,7 @@
+import React from "react"
+
+import DataList from "@/components/ui/data-list";
+
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -12,7 +16,71 @@ import ArrowLeft from "@/components/ui/arrow-left";
 
 import Plus from "@/assets/plus.svg";
 
+import { useFormHelper } from "@/utils/FormHelperContext";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
+
+
 const Education: React.FC = () => {
+  const { setFormData } = useFormHelper();
+
+  // const { toast } = useToast();
+  
+  
+  const AddEducation = () => {
+  
+    const newEducationData = {
+      institutionName: "Universitas Genjot Makima",
+      degree: "Bachelor's",
+      fieldOfStudy: "Informatics",
+      schoolLocation: "Depok, Jawa Barat",
+      graduationMonth: 5,
+      graduationYear: 2023,
+    };
+  
+    setFormData(prevData => ({
+      ...prevData,
+      education: {
+        data: prevData.education.data.concat(newEducationData),
+        isFilled: true,
+      }
+    }));
+  
+    //   toast({
+    //     title: "Onii-chan, you've added a new education!",
+    //     description: "A new form has been added, yeayyy!! ^_^",
+    //   });
+  }
+  
+  const ShowEducation = () => {
+    const { formData } = useFormHelper();
+   
+    return (
+      <>
+         {formData.education.data.map((education, index) => (
+           <DataList 
+              key={index} 
+              title={education.degree} 
+              description={education.institutionName} 
+              onDelete={() => {
+                setFormData(prevData => {
+                   const updatedEducationData = [...prevData.education.data];
+                   updatedEducationData.splice(index, 1);
+                   return {
+                     ...prevData,
+                     education: {
+                       ...prevData.education,
+                       data: updatedEducationData,
+                     },
+                   };
+                });
+                return;
+               }}
+              />
+         ))}
+       </>
+    );
+   }
+
   const EducationFillForm = () => {
     return (
       <div className=" mx-auto flex ml-64 justify-center">
@@ -152,13 +220,22 @@ const Education: React.FC = () => {
             student or did not graduate.{" "}
           </p>
         </div>
+
+        <ScrollArea>
+
+          <ShowEducation />
+        </ScrollArea>
+        
+
         <EducationFillForm />
-        <div  className="flex py-2 ml-[19rem] mt-5 border-2 border-black rounded-xl px-2 w-44 cursor-pointer hover:bg-black hover:text-white transition-colors">
+        <div onClick={AddEducation} className="flex py-2 ml-[19rem] mt-5 border-2 border-black rounded-xl px-2 w-44 cursor-pointer hover:bg-black hover:text-white transition-colors">
           <img src={Plus} className="mr-4" alt="" />
           <p>Add Education</p>
         </div>
 
-        <Button className=" sm:ml-[90%] font-bold mt-20 mb-9">Next</Button>
+        <Button
+         className=" sm:ml-[90%] font-bold mt-20 mb-9">Next</Button>
+
       </div>
     </>
   );
