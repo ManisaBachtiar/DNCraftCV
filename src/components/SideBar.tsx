@@ -38,9 +38,9 @@ const SideBarComponent = {
 
     Item: ({ children, isActive, onClick, ...imgProps }: React.ImgHTMLAttributes<HTMLImageElement> & {children?: string; isActive?: boolean; onClick?: () => void}) => {
         return (
-            <li onClick={onClick} className={`px-8 py-5 text-white flex hover:bg-gray-700 transition-colors duration-300 ease-in-out ${isActive ? "bg-blue-500 text-white" : "bg-transparent text-white"}`}>
+            <li onClick={onClick} className={`px-8 py-5 cursor-pointer text-white flex hover:bg-gray-700 transition-colors duration-300 ease-in-out ${isActive ? "bg-blue-500 text-white" : "bg-transparent text-white"}`}>
                 <img {...imgProps} className="w-[12%] mr-3 transition-colors duration-500 ease-in-out" />
-                <p className="mt-1 transition-colors duration-500 ease-in-out">{ children }</p>
+                <a className="mt-1 transition-colors duration-500 ease-in-out">{ children }</a>
             </li>
         )
     }

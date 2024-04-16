@@ -47,7 +47,11 @@ const Template: React.FC = () => {
         <>
         <div className="bg-[#ECEBEB] ">
             <div className="max-w-7xl  mx-auto">
-            <img src={arrow} className={`w-9   pt-6 ml-12 `} alt="Arrow Left" />
+            
+            
+            <img src={arrow} onClick={() => {
+             window.location.href = "/";   
+            }} className="w-9 pt-6 ml-12 cursor-pointer" alt="Arrow Left" />
 
             <h1 className="font-bold text-3xl mx-12 sm:mx-0 pt-5 sm:pt-2 text-center">
                 Choose Your Favorite Template

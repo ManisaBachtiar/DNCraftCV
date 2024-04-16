@@ -118,9 +118,9 @@ const Heading: React.FC = () => {
           Please provide a brief introduction about yourself
         </p>
       </div>
-      <div className=" mx-auto bg=red300  flex ml-64 justify-center ">
+      <div className=" mx-auto flex ml-64 justify-center ">
         <div className="w-full mt-5 mx-9 max-w-md">
-          <form className="  rounded px-5 pt-6 pb-2 mb-4">
+          <form className="rounded px-5 pt-6 pb-2 mb-4">
             <div className="mb-4">
               <Label
                 className="block text-gray-700 text-sm font-bold mb-3"
