@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 
 import DataList from "@/components/ui/data-list";
 
 import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { Input } from "@/components/ui/input";
+import { Label } from "@radix-ui/react-label";
 import {
   Select,
   SelectContent,
@@ -17,24 +20,57 @@ import ArrowLeft from "@/components/ui/arrow-left";
 import Plus from "@/assets/plus.svg";
 
 import { useFormHelper } from "@/utils/FormHelperContext";
-import { ScrollArea } from "@radix-ui/react-scroll-area";
-
 
 const Education: React.FC = () => {
   const { setFormData } = useFormHelper();
 
   // const { toast } = useToast();
+  const [instutionName, setInstituionName] = useState("");
+  const [degree, setDegree] = useState("");
+  const [fieldOfStudy, setFieldOfStudy] = useState("");
+  const [schoolLocation, setSchoolLocation] = useState("");
+  const [graduationMonth, setGraduationMonth] = useState(0);
+  const [graduationYear, setGraduationYear] = useState(0); 
   
+  // what? not kinda sure with the code, i just want to remove the warning things.
+  type monthMapping_t = {
+    [key: string]: number;
+  };
+
+  const monthMapping: monthMapping_t = {
+    "January": 1,
+    "February": 2,
+    "March": 3,
+    "April": 4,
+    "May": 5,
+    "June": 6,
+    "July": 7,
+    "August": 8,
+    "September": 9,
+    "October": 10,
+    "November": 11,
+    "December": 12
+   };
+   
+  const handleGraduationMonthChange = (monthName: string) => {
+   const monthNumber: number = monthMapping[monthName];
+   setGraduationMonth(monthNumber);
+  };
+
+  const handleGraduationYearChange = (yearParam: string) => {
+    setGraduationYear(Number(yearParam));
+  }
   
   const AddEducation = () => {
+
+    const graduationDate = new Date(graduationYear, graduationMonth, 1);
   
     const newEducationData = {
-      institutionName: "Universitas Genjot Makima",
-      degree: "Bachelor's",
-      fieldOfStudy: "Informatics",
-      schoolLocation: "Depok, Jawa Barat",
-      graduationMonth: 5,
-      graduationYear: 2023,
+      institutionName: instutionName,
+      degree: degree,
+      fieldOfStudy: fieldOfStudy,
+      schoolLocation: schoolLocation,
+      graduationDate: graduationDate,
     };
   
     setFormData(prevData => ({
@@ -60,7 +96,7 @@ const Education: React.FC = () => {
            <DataList 
               key={index} 
               title={education.degree} 
-              description={education.institutionName} 
+              description={`${education.institutionName} - graduated at ${education.graduationDate.getMonth} ${education.graduationDate.getFullYear}`} 
               onDelete={() => {
                 setFormData(prevData => {
                    const updatedEducationData = [...prevData.education.data];
@@ -87,74 +123,78 @@ const Education: React.FC = () => {
         <div className="w-full mt-2 mx-9 max-w-md">
           <form className="  rounded px-5 pt-6 pb-2 mb-4">
             <div className="mb-4 mt-6">
-              <label
+              <Label
                 className="block text-gray-700 text-sm font-bold mb-3"
-                htmlFor="Profession"
+                htmlFor="institutionName"
               >
                 Institution Name
-              </label>
-              <input
+              </Label>
+              <Input
                 className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="Profession"
+                id="institutionName"
                 type="text"
                 placeholder="e.g. University of Indonesia"
+                onChange={(e) => { setInstituionName(e.target.value); }}
               />
             </div>
             <div className="mb-4 mt-6">
-              <label
+              <Label
                 className="block text-gray-700 text-sm font-bold mb-3"
-                htmlFor="email"
+                htmlFor="degree"
               >
                 Degree
-              </label>
-              <input
+              </Label>
+              <Input
                 className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="email"
-                type="email"
+                id="degree"
+                type="text"
                 placeholder="e.g Bachelor's"
+                onChange={(e) => { setDegree(e.target.value); }}
               />
             </div>
             <div className="mb-4 mt-6">
-              <label
+              <Label
                 className="block text-gray-700 text-sm font-bold mb-3"
-                htmlFor="phone"
+                htmlFor="fieldOfStudy"
               >
                 Field of Study
-              </label>
-              <input
+              </Label>
+              <Input
                 className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="phone"
+                id="filedOfStudy"
                 type="text"
                 placeholder="e.g. Informatics"
+                onChange={(e) => { setFieldOfStudy(e.target.value); }}
               />
             </div>
           </form>
         </div>
         <div className="w-full mt-5 mx-9 max-w-md">
-          <form className="  rounded px-5 pt-6 pb-2 mb-4">
+          <form className="rounded px-5 pt-6 pb-2 mb-4">
             <div className="mt-5">
-              <label
+              <Label
                 className="block text-gray-700 text-sm font-bold mb-3"
-                htmlFor="First Name"
+                htmlFor="schoolLocation"
               >
                 School Location
-              </label>
-              <input
+              </Label>
+              <Input
                 className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="username"
+                id="schoolLocation"
                 type="text"
                 placeholder="e.g.  Depok, Jawa Barat "
+                onChange={(e) => { setSchoolLocation(e.target.value); }}
               />
             </div>
             <div className="mb-4 mt-28 flex ">
               <div>
-                <label
+                <Label
                   className="block text-gray-700 text-sm font-bold mb-3"
-                  htmlFor="Profession"
+                  htmlFor="graduationDate"
                 >
                   Graduation Date
-                </label>
-                <Select>
+                </Label>
+                <Select onValueChange={handleGraduationMonthChange}>
                   <SelectTrigger className="w-[180px] bg-[#ECEBEB]">
                     <SelectValue placeholder="Month" />
                   </SelectTrigger>
@@ -178,7 +218,7 @@ const Education: React.FC = () => {
                 </Select>
               </div>
               <div className="ml-5">
-                <Select>
+                <Select onValueChange={handleGraduationYearChange}>
                   <SelectTrigger className="w-[180px] bg-[#ECEBEB] mt-8">
                     <SelectValue placeholder="Year" />
                   </SelectTrigger>

@@ -95,7 +95,7 @@ const Work: React.FC = () => {
                 <input
                   className="bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="Profession"
-                  type="password"
+                  type="text"
                   placeholder="e.g. Developer"
                 />
               </div>

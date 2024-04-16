@@ -4,7 +4,57 @@ import { Button } from "@/components/ui/button";
 import Plus from "@/assets/plus.svg";  
 import Trash from "@/assets/trash.svg";
 
+import DataList from "@/components/ui/data-list";
+
 const Language: React.FC = () => {
+  // const {language, setLanguage} = useState("");
+
+  // const AddLanguage = () => {
+
+  //   const newLanguageData = {
+  //     language : "japanesse",
+  //   };
+
+  //   setFormData(prevData => ({
+  //     ...prevData,
+  //     language: {
+  //       data: prevData.language.data.concat(newEducationData),
+  //       isFilled:true,
+  //     }
+  //   }))
+  // }
+
+  // const ShowLanguage = () => {
+  //   const { formData } = useFormHelper();
+   
+  //   return (
+  //     <>
+  //        {formData.education.data.map((education, index) => (
+  //          <DataList 
+  //             key={index} 
+  //             title={education.degree} 
+  //             description={`${education.institutionName} - ${education.graduationDate}`} 
+  //             onDelete={() => {
+  //               setFormData(prevData => {
+  //                  const updatedEducationData = [...prevData.education.data];
+  //                  updatedEducationData.splice(index, 1);
+  //                  return {
+  //                    ...prevData,
+  //                    education: {
+  //                      ...prevData.education,
+  //                      data: updatedEducationData,
+  //                    },
+  //                  };
+  //               });
+  //               return;
+  //              }}
+  //             />
+  //        ))}
+  //      </>
+  //   );
+
+
+  // wtf :( why is all red
   return (
     <>
       <div className=" max-w-7xl mx-auto ">

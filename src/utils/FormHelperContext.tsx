@@ -36,7 +36,7 @@ interface FormData {
             degree: string;
             fieldOfStudy: string;
             schoolLocation: string;
-            graduationDate: number; // should use unix timestamp and convert it to smth
+            graduationDate: Date;
         }[];
 
         isFilled: boolean;
@@ -46,8 +46,15 @@ interface FormData {
             jobTitle: string;
             location: string;
             employer: string;
-            startDate: number; // should use unix timestamp and convert it to smth
-            endDate: number; // should use unix timestamp and convert it to smth
+            startDate: Date;
+            endDate: Date;
+        }[];
+        
+        isFilled: boolean;
+    },
+    language: {
+        data: {
+            language: string;
         }[];
         
         isFilled: boolean;
@@ -96,6 +103,10 @@ export const FormHelperProvider: React.FC<{children?: React.ReactNode;}> = ({ ch
         work: {
             data: [],
             isFilled: false,
+        },
+        language: {
+            data: [],
+            isFilled:false,
         }
     });
 
