@@ -11,7 +11,7 @@ import Language from "@/forms/ui/Language";
 import Template from "@/forms/ui/Template";
 import { useFormHelper, FormStep } from "@/utils/FormHelperContext"
 
-const FormComponent: React.FC<{currentStep?: number;}> = ({ currentStep }) => {
+const FormLayoutBuilder: React.FC<{currentStep?: number;}> = ({ currentStep }) => {
     switch (currentStep)
     {
         case FormStep.HEADING: {
@@ -60,7 +60,7 @@ const GenerateForm: React.FC = () => {
 
     if (currentStep === FormStep.TEMPLATE) {
         return (
-            <FormComponent currentStep={currentStep} />
+            <FormLayoutBuilder currentStep={currentStep} />
         );
     }
     else
@@ -69,7 +69,7 @@ const GenerateForm: React.FC = () => {
             <div className="flex">
                 <SideBar />
                 <div className="flex-grow">
-                    <FormComponent currentStep={currentStep} />
+                    <FormLayoutBuilder currentStep={currentStep} />
                     {/* <Summary /> */}
                 </div>
             </div>

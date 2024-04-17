@@ -4,7 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import 'tailwindcss/tailwind.css';
 
-const ReactEditor: React.FC = () => {
+const ReactEditor: React.FC<{onChange: (value: string) => void}> = ({ onChange }) => {
   const [editorHtml, setEditorHtml] = useState<string>('');
 
   const modules = {
@@ -24,7 +24,10 @@ const ReactEditor: React.FC = () => {
           theme="snow" 
           className='h-64'
           value={editorHtml} 
-          onChange={(value) => setEditorHtml(value)} 
+          onChange={(value) => {
+            setEditorHtml(value);
+            onChange(value);
+          }} 
           modules={modules} 
         />
       </div>

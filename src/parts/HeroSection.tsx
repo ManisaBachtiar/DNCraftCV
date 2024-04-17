@@ -31,7 +31,7 @@ const HeroSection: React.FC = () => {
             </ul>
           </NavBar.Root>
           <div className="mx-9 md:mx-28 my-12 lg:my-20 md:my-20 xl:my-24">
-            <h1 className="text-[2.5rem]  text-center lg:text-left  lg:w-[89%] xl:w-[90%] md:leading-tight md:text-6xl xl:text-[3.5rem] font-bold xl:leading-tight leading-11 ">Craft Your Future with DNCraftCV</h1>
+            <h1 className="text-[3rem]  text-center lg:text-left  lg:w-[89%] xl:w-[90%] md:leading-tight md:text-6xl xl:text-[3.5rem] font-bold xl:leading-tight leading-11 ">Craft Your Future with DNCraftCV</h1>
             <p className=" md:mt-5 mt-2  text-xl lg:w-[80%] md:w-[90%] xl:w-[70%] leading-normal text-slate-700 text-center lg:text-left  font-light">
               Crafting Your Digital Identity to Transform Experience into
               Opportunity
@@ -42,16 +42,14 @@ const HeroSection: React.FC = () => {
                   setHasVisitedHome(true);
                   navigate("/generate");
                 }}
-                className="items-center   mt-5 md:mt-12 w-48 px-5  xl:px-9 text-lg py-[1.7rem] xl:py-8 rounded-xl border-black border-2 font-semibold ">
+                className="items-center mt-5   md:mt-9  w-48 px-5  xl:px-9 text-lg py-[1.7rem] xl:py-8 rounded-xl border-black border-2 font-semibold ">
                 Curriculum Vitae
               </Button>
-              <Button className="mt-3 sm:mt-15 w-48 ml-2  px-5 xl:px-9 py-6 xl:py-8 rounded-xl font-bold border-black border-2 bg-light text-lg text-black">
+              <Button className="md:mt-9 mt-5   w-48 ml-2  px-5 xl:px-9 py-[1.7rem] xl:py-8 rounded-xl font-bold border-black border-2 bg-light text-lg text-black">
                 Cover Letter
               </Button>
             </div>
-            {/**
-             * uwu kerenn coba aku liat hiii, codenya udh bisa wkwk, coba check di education.tsx
-             */}
+         
           </div>
           <img src={img} className="mt-20  md:hidden" alt="" />
         </div>

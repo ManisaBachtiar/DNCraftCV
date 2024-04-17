@@ -10,28 +10,50 @@ import { cn } from "@/lib/utils";
 import btn_plus from "@/assets/plus.svg";
 
 
-class FormComponent {
+class FormLayoutBuilder {
 
-    // member variables
     private m_nextButtonHandler: () => void = () => {};
     private m_backButtonHandler: () => void = () => {};
 
+    // callbacks are not rlly needed at the moment
+    // private m_inputTextCallback: Map<string, Map<HTMLInputElement, () => void>>;
+    private m_inputTextCallback: Map<string, HTMLInputElement>;
+
     constructor() {
+        // this.m_inputTextCallback = new Map<string, Map<HTMLInputElement, () => void>>();
+        this.m_inputTextCallback = new Map<string, HTMLInputElement>;
+
         this.MainLayout = this.MainLayout.bind(this);
         
         this.setNextButtonhandler = this.setNextButtonhandler.bind(this);
         this.setBackButtonHandler = this.setBackButtonHandler.bind(this);
+        this.setInputTextCallback = this.setInputTextCallback.bind(this);
     }
 
-    // utilities function
-    setNextButtonhandler(handler: () => void) {
+    setNextButtonhandler = (handler: () => void): void => {
         this.m_nextButtonHandler = handler;
     }
     
-    setBackButtonHandler(handler: () => void) {
+    setBackButtonHandler = (handler: () => void) => {
         this.m_backButtonHandler = handler;
     }
-    
+
+    setInputTextCallback = (elementID: string, inputElement: HTMLInputElement): void => {
+        if (!this.m_inputTextCallback.has(elementID))
+            this.m_inputTextCallback.set(elementID, inputElement);
+    }
+
+    getInputText = (elementID: string): HTMLInputElement | undefined => {
+        const inputElement = this.m_inputTextCallback.get(elementID);
+
+        if (!inputElement) {
+            console.error("no callback found for input with elementID", elementID);
+            return undefined;
+        }
+
+        return inputElement;
+    }
+
     MainLayout: React.FC<{ children: React.ReactNode; }> = ({ children }) => {
         return (
             <div className="max-w-7xl mx-auto">
@@ -99,28 +121,37 @@ class FormComponent {
         )
     }
 
-    AddInputText: React.FC<{ 
-        name?: string; 
-        placeholder?: string; 
-        labelClass?: string; 
-        inputClass?: string; 
+    AddInputText: React.FC<React.InputHTMLAttributes<HTMLInputElement> & {
+        name?: string;
+        labelClass?: string;
         className?: string;
-        children: string; 
-        type?: HTMLInputTypeAttribute; 
-        value?: string; 
-    }> = ({ name, placeholder, className, labelClass, inputClass, children, type, value }) => {
+        children: string;
+    }> = ({ name, placeholder, className, labelClass, children, ...inputProps }) => {
+        
+        const inputRef = React.useRef<HTMLInputElement>(null);
+        
+        React.useEffect(() => {
+            if (name && inputRef.current) {
+                this.setInputTextCallback(name, inputRef.current);
+            }
+        }, [name, inputRef.current]);
+    
         return (
             <div className={cn("mb-4", className)}>
                 <Label htmlFor={name} className={cn("block text-gray-700 text-sm font-bold mb-3", labelClass)}>{ children }</Label>
                 <Input 
-                    className={cn("bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", inputClass)}
-                    type={type}
+                    className={cn("bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", inputProps.className)}
+                    type={inputProps.type}
+                    ref={inputRef}
+                    id={name}
                     placeholder={placeholder}
-                    value={value}
+                    value={inputProps.value}
+                    onChange={inputProps.onChange}
+                    {...inputProps}
                 />
             </div>
         )
     }
 }
 
-export default FormComponent;
+export default FormLayoutBuilder;
