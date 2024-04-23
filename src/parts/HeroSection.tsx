@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
-import { NavBar } from "@/components/NavBar";
-
+import NavBar from "@/components/NavBar";
+import MobileNavBar from "@/components/MobileNavBar";
 import { useNavigationContext } from "@/utils/NavigationContext";
 
 import img from "../assets/img4.png";
@@ -18,21 +18,11 @@ const HeroSection: React.FC = () => {
     <div className="bg-[#F9F9F9] font-poppins">
       <div className="flex max-w-7xl mx-auto relative">
         <div className=" lg:w-2/3 pt-3  pb-12  ">
-          <NavBar.Root>
-            <NavBar.Title>DNCraftCV</NavBar.Title>
-
-            <ul className=" items-center hidden md:block mt-3">
-              <li className="text-black font-medium text-base xl:text-lg">
-                <NavBar.Link href="/home" className="ml-9">Home</NavBar.Link>
-                <NavBar.Link href="/generate" className="ml-7">Curriculum Vitae</NavBar.Link>
-                <NavBar.Link href="/cl" className="ml-7">Cover Letter</NavBar.Link>
-                <NavBar.Link href="/faq" className="ml-7">FAQ</NavBar.Link>
-              </li>
-            </ul>
-          </NavBar.Root>
+          {/* <MobileNavBar /> */}
+          <NavBar /> 
           <div className="mx-9 md:mx-28 my-12 lg:my-20 md:my-20 xl:my-24">
             <h1 className="text-[3rem]  text-center lg:text-left  lg:w-[89%] xl:w-[90%] md:leading-tight md:text-6xl xl:text-[3.5rem] font-bold xl:leading-tight leading-11 ">Craft Your Future with DNCraftCV</h1>
-            <p className=" md:mt-5 mt-2  text-xl lg:w-[80%] md:w-[90%] xl:w-[70%] leading-normal text-slate-700 text-center lg:text-left  font-light">
+            <p className=" md:mt-5 mt-2  text-xl lg:w-[80%] xl:w-[70%] leading-normal text-slate-700 text-center lg:text-left font-light">
               Crafting Your Digital Identity to Transform Experience into
               Opportunity
             </p>

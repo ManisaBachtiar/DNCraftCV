@@ -33,7 +33,8 @@ const Heading: React.FC = () => {
         email,
         city,
         postalCode,
-        phone
+        phone,
+        isFilled: true
       }
     }));
   }, [firstName, lastName, profession, province, email, city, postalCode, phone, setFormData]);

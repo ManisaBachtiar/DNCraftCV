@@ -17,6 +17,15 @@ module.exports = {
       },
     },
     extend: {
+      animation: {
+        slide: 'slide 0.3s ease-out forwards',
+      },
+      keyframes: {
+        slide: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+      },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
       },

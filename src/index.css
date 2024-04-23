@@ -92,3 +92,27 @@
   border:none;
   @apply bg-none
 }
+
+/* NavBar Transition Animation */
+.slide-enter {
+  transform: translateX(0%);
+opacity:0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+ }
+ 
+ .slide-enter-active {
+  transform: translateX(10%);
+  opacity:1;
+ 
+ }
+ 
+ .slide-exit {
+  transform: translateX(0);
+ 
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+ }
+ 
+ .slide-exit-active {
+  transform: translateX(-10%);
+ }
+ 

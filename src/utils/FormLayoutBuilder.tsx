@@ -126,7 +126,8 @@ class FormLayoutBuilder {
         labelClass?: string;
         className?: string;
         children: string;
-    }> = ({ name, placeholder, className, labelClass, children, ...inputProps }) => {
+        noInput?: boolean;
+    }> = ({ name, placeholder, noInput, className, labelClass, children, ...inputProps }) => {
         
         const inputRef = React.useRef<HTMLInputElement>(null);
         
@@ -139,16 +140,18 @@ class FormLayoutBuilder {
         return (
             <div className={cn("mb-4", className)}>
                 <Label htmlFor={name} className={cn("block text-gray-700 text-sm font-bold mb-3", labelClass)}>{ children }</Label>
-                <Input 
-                    className={cn("bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", inputProps.className)}
-                    type={inputProps.type}
-                    ref={inputRef}
-                    id={name}
-                    placeholder={placeholder}
-                    value={inputProps.value}
-                    onChange={inputProps.onChange}
-                    {...inputProps}
-                />
+                {!noInput && (
+                    <Input 
+                        className={cn("bg-[#ECEBEB] text-sm appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", inputProps.className)}
+                        type={inputProps.type}
+                        ref={inputRef}
+                        id={name}
+                        placeholder={placeholder}
+                        value={inputProps.value}
+                        onChange={inputProps.onChange}
+                        {...inputProps}
+                    />
+                )}
             </div>
         )
     }

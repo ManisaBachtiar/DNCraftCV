@@ -1,28 +1,55 @@
-// AboutPage.tsx
-import ArrowLeft from '@/components/ui/arrow-left';
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import ReactEditor from '@/components/ui/react-editor';
+import React, { useEffect, useState } from "react";
 
-const Skill: React.FC = () => {
-  return (
-    <>
-    <div className=" max-w-7xl mx-auto ">
-    <ArrowLeft className="ml-72"/>
-      <div className="mx-28 mt-7 ml-[19rem] ">
-        <h1 className="font-bold text-3xl ">List some skills to demonstrate your fit for the job</h1>
-        <p className=" w-[80%] mt-2">
-        Use the Enter key to separate each skill.   {" "}
-        </p>
-      </div> 
-      <div className='ml-[18rem] mt-10  h-80'>
-        <h3 className='font-bold ml-6 '>Skills :</h3>
-        <ReactEditor/>
-        </div>
-        <Button className=" sm:ml-[90%] mt-16  mb-7">Next</Button>
-      </div>
-    </>
-  );
-};
+import FormLayoutBuilder from "@/utils/FormLayoutBuilder";
+import ReactEditor from "@/components/ui/react-editor";
 
-export default Skill;
+import { FormStep, useFormHelper } from "@/utils/FormHelperContext";
+
+const form = new FormLayoutBuilder();
+
+const Skills: React.FC = () => {
+
+    const [editorContent, setEditorContent] = useState<string>("");
+
+    const { setCurrentStep, setFormData } = useFormHelper();
+
+    const handleEditorChange = (value: string) => {
+        setEditorContent(value);
+    }
+
+    useEffect(() => {
+        setFormData(prevData => ({
+            ...prevData,
+            summary: {
+                description: editorContent,
+                isFilled: editorContent.trim().length > 0,
+            }
+        }));
+    }, [editorContent, setFormData]);
+
+    form.setBackButtonHandler((): void => {
+        setCurrentStep(FormStep.HEADING);
+    })
+
+    form.setNextButtonhandler((): void => {
+        setCurrentStep(FormStep.EDUCATION);
+    })
+
+    return (
+        <form.MainLayout>
+            <form.BackButton />
+
+            <form.TopLayout>
+                <form.Title>List some skills to demonstrate your fit for the job</form.Title>
+                <form.Description>Use the Enter key to separate each skill.</form.Description>
+            </form.TopLayout>
+
+            <div className="ml-[18rem] mt-10 h-80">
+                <h3 className="font-bold ml-6">Skills:</h3>
+                <ReactEditor onChange={handleEditorChange} />
+            </div>
+        </form.MainLayout>
+    )
+}
+
+export default Skills;
