@@ -12,8 +12,8 @@ import image_language from "@/assets/language.svg";
 const SideBarComponent = {
     Root: ({ children }: {children?: React.ReactNode;}) => {
         return (
-            <div className="flex h-screen fixed">
-            <div className="bg-black w-64">
+            <div className=" hidden sm:block h-screen fixed">
+            <div className="bg-black h-screen w-64">
                 { children }
             </div>
             </div>

@@ -66,7 +66,7 @@ class FormLayoutBuilder {
 
     TopLayout: React.FC<{ children: React.ReactNode; }> = ({ children }) => {
         return (
-            <div className="mx-28 mt-7 ml-[19rem]">
+            <div className="mx-9 sm:mx-28 mt-7 sm:ml-[19rem]">
                 { children }
             </div>
         )
@@ -105,7 +105,7 @@ class FormLayoutBuilder {
 
     BottomLayout: React.FC<{ className?: string; children: React.ReactNode; }> = ({ className, children }) => {
         return (
-            <div className={cn("mx-auto flex ml-64 justify-center ", className)}>
+            <div className={cn("mx-auto flex flex-col sm:flex-row  sm:ml-64 justify-center ", className)}>
                 { children }
             </div>
         )
@@ -113,8 +113,8 @@ class FormLayoutBuilder {
 
     FormSection: React.FC<{ wrapperClass?: string; formClass?: string; children: React.ReactNode; }> = ({ wrapperClass, formClass, children }) => {
         return (
-            <div className={cn("w-full mt-5 mx-9 max-w-md", wrapperClass)}>
-                <form className={cn("rounded px-5 pt-6 pb-2 mb-4", formClass)}>
+            <div className={cn("w-[90%] sm:w-full sm:mt-5 mx-5  sm:mx-9 max-w-md", wrapperClass)}>
+                <form className={cn(" rounded px-5 pt-6 pb-2 mb-4", formClass)}>
                     { children }
                 </form>
             </div>
