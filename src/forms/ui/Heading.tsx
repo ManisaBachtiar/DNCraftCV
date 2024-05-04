@@ -61,7 +61,7 @@ const Heading: React.FC = () => {
           <form.AddInputText onChange={(e) => { setEmail(e.target.value); }} value={email} name="email" placeholder="e.g. hannaputri@mailserver.com">Email</form.AddInputText>
         </form.FormSection>
 
-        <form.FormSection>
+        <form.FormSection wrapperClass="mt-[-37px]">
           <form.AddInputText onChange={(e) => { setLastName(e.target.value); }} value={lastName} name="lastName" placeholder="e.g. Putri">Last Name</form.AddInputText>
           <form.AddInputText onChange={(e) => { setCity(e.target.value); }} value={city} name="city" placeholder="e.g. Jakarta">City</form.AddInputText>
           <form.AddInputText onChange={(e) => { setPostalCode(e.target.value); }} value={postalCode} name="postalCode" placeholder="e.g. 00000">Postal Code</form.AddInputText>

@@ -59,7 +59,7 @@ class FormLayoutBuilder {
             <div className="max-w-7xl mx-auto">
                 { children }
 
-                <Button className="sm:ml-[90%] font-bold mt-20 mb-9" onClick={this.m_nextButtonHandler}>Next</Button>
+                <Button className="ml-7 sm:ml-[90%] font-bold mt-20 mb-9" onClick={this.m_nextButtonHandler}>Next</Button>
             </div>
         )
     }
@@ -74,10 +74,10 @@ class FormLayoutBuilder {
 
     BackButton: React.FC = () => {
         return (
-            <ArrowLeft onClick={this.m_backButtonHandler} className="ml-72 cursor-pointer" />
+            <ArrowLeft onClick={this.m_backButtonHandler} className="ml-7 sm:ml-72 cursor-pointer" />
         );
     }
-
+    
     Title: React.FC<{ children: string; }> = ({ children }) => {
         return (
             <h1 className="font-bold text-3xl">
@@ -94,9 +94,9 @@ class FormLayoutBuilder {
         );
     }
 
-    addListButton: React.FC<{ onClick?: () => void; children: string; }> = ({ onClick, children }) => {
+    addListButton: React.FC<{ onClick?: () => void; children: string; className?: string; }> = ({ onClick, children, className }) => {
         return (
-            <div onClick={ onClick } className="flex py-2 ml-[19rem] mt-5 border-2 border-black rounded-xl px-2 w-44 cursor-pointer hover:bg-black hover:text-white transition-colors">
+            <div onClick={ onClick } className={cn("flex py-2 ml-[19rem] mt-5 border-2 border-black rounded-xl px-2 w-44 cursor-pointer hover:bg-black hover:text-white transition-colors", className)}>
                 <img src={ btn_plus } className="mr-4" alt="" />
                 <p>{ children }</p>
             </div>
