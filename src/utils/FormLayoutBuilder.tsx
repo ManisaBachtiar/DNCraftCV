@@ -59,7 +59,7 @@ class FormLayoutBuilder {
             <div className="max-w-7xl mx-auto">
                 { children }
 
-                <Button className="ml-7 sm:ml-[90%] font-bold mt-20 mb-9" onClick={this.m_nextButtonHandler}>Next</Button>
+                <Button className="ml-10 sm:ml-[90%] font-bold mt-12 sm:mt-20 mb-9" onClick={this.m_nextButtonHandler}>Next</Button>
             </div>
         )
     }

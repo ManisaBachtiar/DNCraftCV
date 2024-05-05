@@ -105,11 +105,11 @@ const NavBar: React.FC = () => {
             >
             <div className={`md:hidden bg-white fixed top-0 left-0 h-screen w-2/3`}>
                 <h1 className="text-2xl px-8 mt-9 font-bold">Menu</h1>
-                <ul className="text-black flex flex-col font-medium text-xl mt-5 px-6 list-none xl:text-lg">
-                    <li className="m-3"><a href="#home">Home</a></li>
-                    <li className="m-3"><a href="/generate">Curriculum Vitae</a></li>
-                    <li className="m-3"><a href="#home">Cover Letter</a></li>
-                    <li className="m-3"><a href="#home">FAQ</a></li>
+                <ul className="text-black flex flex-col  font-medium text-xl mt-5 list-none xl:text-lg">
+                    <li className="py-4 px-9 mt-3 hover:bg-gray-100 "><a href="#home">Home</a></li>
+                    <li className="  py-4 px-9 hover:bg-gray-100"><a href="/generate">Curriculum Vitae</a></li>
+                    <li className=" py-4 px-9 hover:bg-gray-100"><a href="#home">Cover Letter</a></li>
+                    <li className=" py-4 px-9 hover:bg-gray-100"><a href="#home">FAQ</a></li>
                 </ul>
             </div>
             </CSSTransition>

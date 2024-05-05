@@ -44,7 +44,7 @@ const Summary: React.FC = () => {
                 <form.Description>Include all relevant achievements, experiences, and skills in your CV related to the position you are applying for.</form.Description>
             </form.TopLayout>
 
-            <div className="ml-[18rem] mt-10 h-80">
+            <div className="ml-4 sm:ml-[18rem] mt-10 w-full sm:w-[80%] h-80">
                 <h3 className="font-bold ml-6">Description:</h3>
                 <ReactEditor onChange={handleEditorChange} />
             </div>
