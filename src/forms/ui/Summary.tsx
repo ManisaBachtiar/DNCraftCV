@@ -8,10 +8,9 @@ import { FormStep, useFormHelper } from "@/utils/FormHelperContext";
 const form = new FormLayoutBuilder();
 
 const Summary: React.FC = () => {
+    const { setCurrentStep, setFormData, formData } = useFormHelper();
 
-    const [editorContent, setEditorContent] = useState<string>("");
-
-    const { setCurrentStep, setFormData } = useFormHelper();
+    const [editorContent, setEditorContent] = useState<string>(formData.summary.description);
 
     const handleEditorChange = (value: string) => {
         setEditorContent(value);
@@ -46,7 +45,7 @@ const Summary: React.FC = () => {
 
             <div className="ml-4 sm:ml-[18rem] mt-10 w-full sm:w-[80%] h-80">
                 <h3 className="font-bold ml-6">Description:</h3>
-                <ReactEditor onChange={handleEditorChange} />
+                <ReactEditor onChange={handleEditorChange} value={editorContent} />
             </div>
         </form.MainLayout>
     )

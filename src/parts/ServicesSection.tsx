@@ -3,8 +3,9 @@ import React from "react";
 import CustomCard from "@/components/ui/custom-card";
 
 import cv_image from "../assets/CV.svg";
+import pdf_image from "../assets/pdf.svg"
 import ai_image from "../assets/AI.svg";
-import cl_image from "../assets/CL.svg";
+// import cl_image from "../assets/CL.svg";
 
 const ServicesSection: React.FC = () => {
   return (
@@ -19,15 +20,15 @@ const ServicesSection: React.FC = () => {
 
         <CustomCard
           customClass="bg-white h-72 "
-          img={cl_image}
-          title="Create Cover Letter"
-          content="You also can easily craft a compelling cover letter for free using our excellent selection of templates it will enhance your opportunities"
-        />
+          img={pdf_image}
+          title="Export to PDF & DOC"
+          content="Our website offers a convenient feature where users can export their curriculum vitae (CV) to both PDF and DOC formats."
+          />
 
         <CustomCard
           customClass="bg-white h-72"
           img={ai_image}
-          title="AI Assistant"
+          title="Tutorials & Guides"
           content="With our AI-powered assistance, you can effortlessly refine and rephrase sentences for both your CV and cover letter."
         />
       </div>

@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useFormHelper, FormStep } from "@/utils/FormHelperContext";
 import FormLayoutBuilder from "@/utils/FormLayoutBuilder";
 
+const form = new FormLayoutBuilder();
+
 const Heading: React.FC = () => {
-  const form = new FormLayoutBuilder();
   
   const { setCurrentStep, formData, setFormData } = useFormHelper();
 

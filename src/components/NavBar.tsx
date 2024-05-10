@@ -1,35 +1,3 @@
-// const NavBar: React.FC = () => {
-//     return (
-//         <nav className="mx-9 md:p-4 flex justify-left items-center ">
-//              <span className="ml-6 hidden md:block text-lg xl:text-xl font-bold mt-3 text-black">
-//               DNCraftCV
-//             </span>
-//             <div className="flex  justify-between w-[100%] md:hidden items-end ">
-//             <span className="text-xl font-bold mt-3 text-black">
-//               DNCraftCV
-//             </span>
-//             <img src={bar} className="w-9" alt="" />
-//             </div>
-//             <ul className=" items-center hidden md:block mt-3">
-//               <li className="text-black font-medium text-base xl:text-lg">
-//                 <a href="/" className=" ml-9">
-//                   Home
-//                 </a>
-//                 <a href="/" className=" ml-7">
-//                    Curriculum Vitae
-//                 </a>
-//                 <a href="/" className="ml-7">
-//                   Cover Letter{" "}
-//                 </a>
-//                 <a href="/" className="ml-7">
-//                   FAQ
-//                 </a>
-//               </li>
-//             </ul>
-//           </nav>
-//     )
-// }
-
 import navbar_ico from "../assets/bars-3.svg";
 
 import { cn } from "@/lib/utils";
@@ -107,8 +75,8 @@ const NavBar: React.FC = () => {
                 <h1 className="text-2xl px-8 mt-9 font-bold">Menu</h1>
                 <ul className="text-black flex flex-col  font-medium text-xl mt-5 list-none xl:text-lg">
                     <li className="py-4 px-9 mt-3 hover:bg-gray-100 "><a href="#home">Home</a></li>
-                    <li className="  py-4 px-9 hover:bg-gray-100"><a href="/generate">Curriculum Vitae</a></li>
-                    <li className=" py-4 px-9 hover:bg-gray-100"><a href="#home">Cover Letter</a></li>
+                    <li className="  py-4 px-9 hover:bg-gray-100"><a href="/generate">Tutorials </a></li>
+                    <li className=" py-4 px-9 hover:bg-gray-100"><a href="#home"></a>CV</li>
                     <li className=" py-4 px-9 hover:bg-gray-100"><a href="#home">FAQ</a></li>
                 </ul>
             </div>
@@ -117,8 +85,8 @@ const NavBar: React.FC = () => {
             <ul className=" items-center hidden md:block mt-3">
               <li className="text-black font-medium text-base xl:text-lg">
                 <NavBarComponentLink href="/home" className="ml-9">Home</NavBarComponentLink>
-                <NavBarComponentLink href="/generate" className="ml-7">Curriculum Vitae</NavBarComponentLink>
-                <NavBarComponentLink href="/cl" className="ml-7">Cover Letter</NavBarComponentLink>
+                <NavBarComponentLink href="/generate" className="ml-7">Tutorials</NavBarComponentLink>
+                <NavBarComponentLink href="/cl" className="ml-7">CV</NavBarComponentLink>
                 <NavBarComponentLink href="/faq" className="ml-7">FAQ</NavBarComponentLink>
               </li>
             </ul>

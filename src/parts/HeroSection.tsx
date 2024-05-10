@@ -35,8 +35,8 @@ const HeroSection: React.FC = () => {
                 className="items-center mt-5   md:mt-9  w-48 px-5  xl:px-9 text-lg py-[1.7rem] xl:py-8 rounded-xl border-black border-2 font-semibold ">
                 Curriculum Vitae
               </Button>
-              <Button className="md:mt-9 mt-5   w-48 ml-2  px-5 xl:px-9 py-[1.7rem] xl:py-8 rounded-xl font-bold border-black border-2 bg-light text-lg text-black">
-                Cover Letter
+              <Button className="md:mt-9 mt-5   w-48 ml-2  px-5 xl:px-24 py-[1.7rem] xl:py-8 rounded-xl font-bold border-black border-2 bg-light text-lg text-black">
+                Visit Blog
               </Button>
             </div>
          
