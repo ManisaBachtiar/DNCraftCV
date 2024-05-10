@@ -2,7 +2,7 @@ import React from "react";
 
 import CardMedium from "@/components/ui/medium-card";
 
-import bot from "../assets/bot.svg";
+import infinity from "../assets/infinity.svg"
 import efficient from "../assets/efficient.svg";
 import template from "../assets/template.svg";
 import free from "../assets/free.svg";
@@ -28,9 +28,9 @@ const BenefitSection: React.FC = () => {
                   description="This website is completely free to use, with no hidden costs that could strain your wallet."
                 />
                 <CardMedium
-                  img={bot}
-                  title="We Offer an AI helper"
-                  description="We provide an AI assistant to aid you, enabling you to effortlessly employ impactful language."
+                  img={infinity}
+                  title="There are no limits"
+                  description="Feel at ease using this without any restrictions—it's entirely free and limitless."
                 />
               </div>
               <div className="max-w-7xl md:mt-5 md:flex-row flex-col px-9  mx-auto flex justify-center w-full ">

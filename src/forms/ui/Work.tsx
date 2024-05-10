@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import FormLayoutBuilder from "@/utils/FormLayoutBuilder";
 import { useFormHelper, FormStep } from "@/utils/FormHelperContext";
@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import DataList from "@/components/ui/data-list";
 import { Checkbox } from "@/components/ui/checkbox";
 
 import ReactEditor from "@/components/ui/react-editor";
@@ -21,7 +22,67 @@ const form = new FormLayoutBuilder();
 
 const Work: React.FC = () => {
 
-  const { setCurrentStep } = useFormHelper();
+  const { setCurrentStep, setFormData, formData } = useFormHelper();
+
+  const [jobTitle, setJobTitle] = useState<string>("");
+  const [education, setEducation] = useState<string>("");
+  const [employer, setEmployer] = useState<string>("");
+
+  const [startMonth, setStartMonth] = useState<number>(0);
+  const [startYear, setStartYear] = useState<number>(0);
+
+  const [endMonth, setEndMonth] = useState<number>(0);
+  const [endYear, setEndYear] = useState<number>(0);
+
+  const [currentlyWork, setCurrentlyWork] = useState<boolean>(false);
+
+  // not sure with this code, i just want to remove the warning things from the previous code.
+  type monthMapping_t = {
+    [key: string]: number;
+  };
+
+  const monthMapping: monthMapping_t = {
+      "January": 1,
+      "February": 2,
+      "March": 3,
+      "April": 4,
+      "May": 5,
+      "June": 6,
+      "July": 7,
+      "August": 8,
+      "September": 9,
+      "October": 10,
+      "November": 11,
+      "December": 12
+  };
+
+  const ShowWork = () => {
+    return (
+      <>
+        {formData.work.data.map((work, index) => (
+            <DataList 
+                key={index} 
+                title={work.jobTitle} 
+                description={`${work.employer} - start at ${new Date(work.startDate).getMonth() + 1}/${new Date(work.endDate).getFullYear()}`} 
+                onDelete={() => {
+                  setFormData(prevData => {
+                    const updatedWorkData = [...prevData.work.data];
+                    updatedWorkData.splice(index, 1);
+                    return {
+                        ...prevData,
+                        work: {
+                        ...prevData.work,
+                        data: updatedWorkData,
+                        },
+                    };
+                  });
+                  return;
+                }}
+            />
+        ))}
+      </>
+    )
+  }
 
   form.setBackButtonHandler((): void => {
     setCurrentStep(FormStep.EDUCATION);
@@ -30,6 +91,10 @@ const Work: React.FC = () => {
   form.setNextButtonhandler((): void => {
     setCurrentStep(FormStep.SKILL);
   });
+
+  const AddWorkBtnHandler = () => {
+
+  }
 
   return (
     <form.MainLayout>
@@ -162,9 +227,11 @@ const Work: React.FC = () => {
 
       </form.BottomLayout>
         <div className="ml-[18rem] mt-3  h-80">
-          <h3 className="font-bold ml-6 ">Description :</h3>
+          <h3 className="font-bold ml-6 ">Description: </h3>
           <ReactEditor onChange={() => {}} />
         </div>
+
+        <form.addListButton className="mt-10" onClick={AddWorkBtnHandler}>Add Education</form.addListButton>
     </form.MainLayout>
   )
 }

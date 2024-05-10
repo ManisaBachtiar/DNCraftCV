@@ -75,8 +75,8 @@ const NavBar: React.FC = () => {
                 <h1 className="text-2xl px-8 mt-9 font-bold">Menu</h1>
                 <ul className="text-black flex flex-col  font-medium text-xl mt-5 list-none xl:text-lg">
                     <li className="py-4 px-9 mt-3 hover:bg-gray-100 "><a href="#home">Home</a></li>
-                    <li className="  py-4 px-9 hover:bg-gray-100"><a href="/generate">Tutorials </a></li>
-                    <li className=" py-4 px-9 hover:bg-gray-100"><a href="#home"></a>CV</li>
+                    <li className="  py-4 px-9 hover:bg-gray-100"><a href="/generate">CV</a></li>
+                    <li className=" py-4 px-9 hover:bg-gray-100"><a href="#home"></a>Blog</li>
                     <li className=" py-4 px-9 hover:bg-gray-100"><a href="#home">FAQ</a></li>
                 </ul>
             </div>
@@ -85,8 +85,8 @@ const NavBar: React.FC = () => {
             <ul className=" items-center hidden md:block mt-3">
               <li className="text-black font-medium text-base xl:text-lg">
                 <NavBarComponentLink href="/home" className="ml-9">Home</NavBarComponentLink>
-                <NavBarComponentLink href="/generate" className="ml-7">Tutorials</NavBarComponentLink>
-                <NavBarComponentLink href="/cl" className="ml-7">CV</NavBarComponentLink>
+                <NavBarComponentLink href="/generate" className="ml-7">CV</NavBarComponentLink>
+                <NavBarComponentLink href="/cl" className="ml-7">Blog</NavBarComponentLink>
                 <NavBarComponentLink href="/faq" className="ml-7">FAQ</NavBarComponentLink>
               </li>
             </ul>
