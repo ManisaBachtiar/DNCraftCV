@@ -93,7 +93,11 @@ const Work: React.FC = () => {
   });
 
   const AddWorkBtnHandler = () => {
+    const startDate = new Date(startYear, startMonth, 1);
 
+    const newWorkData = {
+      
+    };
   }
 
   return (
